@@ -1,0 +1,12 @@
+.logo {
+  height: 95%; /* keeps aspect ratio */
+  max-height: 200px; /* or whatever max height you want */
+  display: block;
+}
+
+.header-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px; /* or something like 60px–100px */
+}

@@ -1,0 +1,42 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  gap: 8px;
+  height: 100vh; 
+  width: 100vw; 
+  padding: 8px; 
+  box-sizing: border-box;
+}
+    
+.header {
+    grid-column: span 6 / span 6;
+    background-color: #1e1e1e;
+}
+
+.game-options {
+    grid-column: span 2 / span 2;
+    grid-row: span 6 / span 6;
+    grid-row-start: 2;
+     background-color: red;
+}
+
+.game-board {
+    grid-column: span 4 / span 4;
+    grid-row: span 6 / span 6;
+    grid-column-start: 3;
+    grid-row-start: 2;
+     background-color: pink;
+}
+
+.footer {
+    grid-column: span 6 / span 6;
+    grid-row-start: 8;
+     background-color: rgb(0, 255, 128);
+}
+        
