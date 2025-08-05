@@ -1,2 +1,0 @@
-# SnapCount
-NFL Trivia

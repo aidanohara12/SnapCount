@@ -1,0 +1,23 @@
+.gameCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    width: 120px; 
+    height: 150px; 
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff; 
+    box-sizing: border-box;
+}
+.gameCardImage {
+    width: 100%;
+    height: 100px;
+    margin-top: 0px;
+}
+
+.gameCardName {
+    margin-top: 10px;
+    font-size: 10px;
+}
