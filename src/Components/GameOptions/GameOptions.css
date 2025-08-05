@@ -1,3 +1,7 @@
+.container {
+  margin: 10px;
+}
+
 .gameOptions {
   display: flex;
   flex-wrap: wrap;
@@ -17,4 +21,10 @@
 .gameOptions li button {
   background: none;
   width: 100%;
+}
+
+.title {
+  font-size: 30px;
+  color: white;
+  text-align: center;
 }

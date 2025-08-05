@@ -9,7 +9,8 @@ type gameOptionsProps = {
 
 function GameOptions({setCurrentGame}: gameOptionsProps) {
     return (
-        <div>
+        <div className='container'>
+            <h2 className='title'>Game Options</h2>
             <ul className="gameOptions">
                 <li>
                     <button onClick={() => setCurrentGame(games[0])}>

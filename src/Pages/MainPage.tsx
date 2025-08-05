@@ -19,7 +19,6 @@ function MainPage() {
             <div className="game-board">
                 <GameBoard game={currentGame} />
             </div>
-            <div className="footer">7</div>
         </div>
     )
 }

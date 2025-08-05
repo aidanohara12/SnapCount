@@ -1,23 +1,80 @@
+import { useEffect, useState } from 'react';
 import './HigherOrLower.css'
+import DisplayPlayer from './DisplayPlayer';
+import { players } from '../../Models/Players'
 
 function HigherOrLower() {
+    const [failed, setFailed] = useState(false)
+    const [score, setScore] = useState(0)
+    const randomNumber = Math.floor(Math.random() * players.length)
+    const [currentPlayer, setCurrentPlayer] = useState(players[randomNumber])
+
+    function checkGuess(over: boolean) {
+        const newPlayer = players[Math.floor(Math.random() * players.length)];
+        if (over) {
+            if (newPlayer.jerseyNumber >= currentPlayer.jerseyNumber) {
+                setCurrentPlayer(newPlayer)
+                setScore(score + 1);
+                setFailed(false);
+            } else {
+                setCurrentPlayer(newPlayer)
+                setFailed(true);
+            }
+        } else {
+            if (newPlayer.jerseyNumber <= currentPlayer.jerseyNumber) {
+                setCurrentPlayer(newPlayer)
+                setScore(score + 1);
+                setFailed(false);
+            }
+            else {
+                setCurrentPlayer(newPlayer)
+                setFailed(true);
+            }
+        }
+    }
+
+    function playAgain() {
+        setFailed(false)
+        setScore(0)
+        setCurrentPlayer(players[Math.floor(Math.random() * players.length)])
+    }
+
     return (
-        <div className='higher-or-lower'>
-            <div className="jersey">
-                <div className="leftSleeve">
-                    <div className="leftTop"></div>
-                    <div className="leftBottom"></div>
+        <div>
+            <h1 className='higher-or-lower-title'>Higher Or Lower</h1>
+            <h5 className='higher-or-lower-subtitle'>Try and Guess To See if the Next Player is Higher or Lower</h5>
+            {!failed ? (
+                <div className='outer-container'>
+                    <div className='uparrow'>
+                        <button onClick={() => checkGuess(true)}>
+                            <h1>⬆️</h1>
+                        </button>
+                    </div>
+                    <div className='higher-or-lower'>
+                        <DisplayPlayer name={currentPlayer.lastName} number={currentPlayer.jerseyNumber} primaryColor={currentPlayer.teamPrimaryColor} secondaryColor={currentPlayer.teamSecondaryColor} />
+                    </div>
+                    <div className='downarrow'>
+                        <button onClick={() => checkGuess(false)}>
+                            <h1>⬇️</h1>
+                        </button>
+                    </div>
                 </div>
-                <div className="rightSleeve">
-                    <div className="rightTop"></div>
-                    <div className="rightBottom"></div>
+            ) : (
+                <div className='you-lost'>
+                    <h1>You Lost!</h1>
+                    <h3>The next player was {currentPlayer.lastName} with the number {currentPlayer.jerseyNumber}</h3>
+                    <div>
+                        <button onClick={() => playAgain()}>Click Here to Play Again!</button>
+                        <button>Click Here to Copy Score!</button>
+                    </div>
                 </div>
-                <div className="name">Smith</div>
-                <div className="number">11</div>
+            )}
+
+            <div className='score'>
+                <h4>Current Score: {score}</h4>
             </div>
         </div>
-        
     )
-} 
+}
 
 export default HigherOrLower
