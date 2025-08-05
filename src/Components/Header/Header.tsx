@@ -1,4 +1,4 @@
-import logo from '../../assets/SnapCountLogo.png'
+import logo from '../../Assets/SnapCountLogo.png'
 import './Header.css'
 
 function Header() {
