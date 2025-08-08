@@ -19,6 +19,7 @@ function MainPage() {
             <div className="game-board">
                 <GameBoard game={currentGame} />
             </div>
+            <div className="footer"></div>
         </div>
     )
 }

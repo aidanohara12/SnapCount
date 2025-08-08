@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef, use } from 'react';
 import './HigherOrLower.css'
 import DisplayPlayer from './DisplayPlayer';
 import { players } from '../../Models/Players'
@@ -8,6 +8,8 @@ function HigherOrLower() {
     const [score, setScore] = useState(0)
     const randomNumber = Math.floor(Math.random() * players.length)
     const [currentPlayer, setCurrentPlayer] = useState(players[randomNumber])
+    let textToCopy = useRef('');
+
 
     function checkGuess(over: boolean) {
         const newPlayer = players[Math.floor(Math.random() * players.length)];
@@ -19,6 +21,7 @@ function HigherOrLower() {
             } else {
                 setCurrentPlayer(newPlayer)
                 setFailed(true);
+                textToCopy.current = `SNAPCOUNT\nHigher or Lower\nScore: ${score}\n\nPlay Here at ${window.location.href}!`
             }
         } else {
             if (newPlayer.jerseyNumber <= currentPlayer.jerseyNumber) {
@@ -29,6 +32,7 @@ function HigherOrLower() {
             else {
                 setCurrentPlayer(newPlayer)
                 setFailed(true);
+                textToCopy.current = `SNAPCOUNT\nHigher or Lower\nScore: ${score}\n\nPlay Here at ${window.location.href}!`
             }
         }
     }
@@ -37,6 +41,10 @@ function HigherOrLower() {
         setFailed(false)
         setScore(0)
         setCurrentPlayer(players[Math.floor(Math.random() * players.length)])
+    }
+
+    function copyText() {
+        navigator.clipboard.writeText(textToCopy.current)
     }
 
     return (
@@ -62,10 +70,10 @@ function HigherOrLower() {
             ) : (
                 <div className='you-lost'>
                     <h1>You Lost!</h1>
-                    <h3>The next player was {currentPlayer.lastName} with the number {currentPlayer.jerseyNumber}</h3>
+                    <h3>The next player was {currentPlayer.firstName} {currentPlayer.lastName} with the number {currentPlayer.jerseyNumber}</h3>
                     <div>
                         <button onClick={() => playAgain()}>Click Here to Play Again!</button>
-                        <button>Click Here to Copy Score!</button>
+                        <button onClick={() => copyText()}>Click Here to Copy Score!</button>
                     </div>
                 </div>
             )}
