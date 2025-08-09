@@ -15,29 +15,24 @@ export const players: Player[] = [
 { firstName: "Keon", lastName: "Coleman", jerseyNumber: 0, teamPrimaryColor: "#00338D", teamSecondaryColor: "#C60C30", position: "WR", team: "Buffalo Bills", height: "6'3\"", age: 22 },
 { firstName: "Josh", lastName: "Palmer", jerseyNumber: 5, teamPrimaryColor: "#00338D", teamSecondaryColor: "#C60C30", position: "WR", team: "Buffalo Bills", height: "6'1\"", age: 25 },
 { firstName: "Khalil", lastName: "Shakir", jerseyNumber: 10, teamPrimaryColor: "#00338D", teamSecondaryColor: "#C60C30", position: "WR", team: "Buffalo Bills", height: "6'0\"", age: 25 },
-
-
 { firstName: "Dion", lastName: "Dawkins", jerseyNumber: 73, teamPrimaryColor: "#00338D", teamSecondaryColor: "#C60C30", position: "LT", team: "Buffalo Bills", height: "6'5\"", age: 31 },
 { firstName: "David", lastName: "Edwards", jerseyNumber: 76, teamPrimaryColor: "#00338D", teamSecondaryColor: "#C60C30", position: "LG", team: "Buffalo Bills", height: "6'6\"", age: 28 },
 { firstName: "Connor", lastName: "McGovern", jerseyNumber: 66, teamPrimaryColor: "#00338D", teamSecondaryColor: "#C60C30", position: "C", team: "Buffalo Bills", height: "6'5\"", age: 27 },
 { firstName: "O'Cyrus", lastName: "Torrence", jerseyNumber: 64, teamPrimaryColor: "#00338D", teamSecondaryColor: "#C60C30", position: "RG", team: "Buffalo Bills", height: "6'5\"", age: 25 },
 { firstName: "Spencer", lastName: "Brown", jerseyNumber: 79, teamPrimaryColor: "#00338D", teamSecondaryColor: "#C60C30", position: "RT", team: "Buffalo Bills", height: "6'8\"", age: 27 },
-
 { firstName: "Dalton", lastName: "Kincaid", jerseyNumber: 86, teamPrimaryColor: "#00338D", teamSecondaryColor: "#C60C30", position: "TE", team: "Buffalo Bills", height: "6'4\"", age: 25 },
 { firstName: "Josh", lastName: "Allen", jerseyNumber: 17, teamPrimaryColor: "#00338D", teamSecondaryColor: "#C60C30", position: "QB", team: "Buffalo Bills", height: "6'5\"", age: 29 },
 { firstName: "James", lastName: "Cook", jerseyNumber: 4, teamPrimaryColor: "#00338D", teamSecondaryColor: "#C60C30", position: "RB", team: "Buffalo Bills", height: "5'11\"", age: 25 },
 { firstName: "Reggie", lastName: "Gilliam", jerseyNumber: 41, teamPrimaryColor: "#00338D", teamSecondaryColor: "#C60C30", position: "FB", team: "Buffalo Bills", height: "6'0\"", age: 28 },
-
 { firstName: "Gregory", lastName: "Rousseau", jerseyNumber: 50, teamPrimaryColor: "#00338D", teamSecondaryColor: "#C60C30", position: "DE", team: "Buffalo Bills", height: "6'6\"", age: 25 },
 { firstName: "DaQuan", lastName: "Jones", jerseyNumber: 92, teamPrimaryColor: "#00338D", teamSecondaryColor: "#C60C30", position: "DT", team: "Buffalo Bills", height: "6'4\"", age: 33 },
 { firstName: "Ed", lastName: "Oliver", jerseyNumber: 91, teamPrimaryColor: "#00338D", teamSecondaryColor: "#C60C30", position: "DT", team: "Buffalo Bills", height: "6'1\"", age: 27 },
-{ firstName: "Joey", lastName: "Bosa", jerseyNumber: 97, teamPrimaryColor: "#00338D", teamSecondaryColor: "#C60C30", position: "DE", team: "Buffalo Bills", height: "6'5\"", age: 30 }, // per your custom roster
-
+{ firstName: "Joey", lastName: "Bosa", jerseyNumber: 97, teamPrimaryColor: "#00338D", teamSecondaryColor: "#C60C30", position: "DE", team: "Buffalo Bills", height: "6'5\"", age: 30 }, 
 { firstName: "Matt", lastName: "Milano", jerseyNumber: 58, teamPrimaryColor: "#00338D", teamSecondaryColor: "#C60C30", position: "LB", team: "Buffalo Bills", height: "6'0\"", age: 31 },
 { firstName: "Terrel", lastName: "Bernard", jerseyNumber: 43, teamPrimaryColor: "#00338D", teamSecondaryColor: "#C60C30", position: "LB", team: "Buffalo Bills", height: "6'1\"", age: 26 },
-
 { firstName: "Christian", lastName: "Benford", jerseyNumber: 47, teamPrimaryColor: "#00338D", teamSecondaryColor: "#C60C30", position: "CB", team: "Buffalo Bills", height: "6'1\"", age: 24 },
 { firstName: "Cole", lastName: "Bishop", jerseyNumber: 32, teamPrimaryColor: "#00338D", teamSecondaryColor: "#C60C30", position: "S", team: "Buffalo Bills", height: "6'2\"", age: 22 },
+
   // Miami Dolphins
   { firstName: "Jaylen", lastName: "Waddle", jerseyNumber: 17, teamPrimaryColor: "#008E97", teamSecondaryColor: "#FC4C02", position: "WR", team: "Miami Dolphins", height: "5'10\"", age: 26 },
   { firstName: "Tyreek", lastName: "Hill", jerseyNumber: 10, teamPrimaryColor: "#008E97", teamSecondaryColor: "#FC4C02", position: "WR", team: "Miami Dolphins", height: "5'10\"", age: 31 },

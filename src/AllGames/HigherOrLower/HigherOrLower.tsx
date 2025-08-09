@@ -79,7 +79,7 @@ function HigherOrLower() {
             )}
 
             <div className='score'>
-                <h4>Current Score: {score}</h4>
+                <h6>Current Score: {score}</h6>
             </div>
         </div>
     )

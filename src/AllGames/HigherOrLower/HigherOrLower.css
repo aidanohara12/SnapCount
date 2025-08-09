@@ -5,6 +5,7 @@
   justify-content: center;
   gap: 50px; 
   margin-top: -100px;
+  height: 600px;
 }
 
 .higher-or-lower-title {
@@ -32,6 +33,7 @@
 
 .uparrow button, .downarrow button {
     background-color: transparent;
+    border: none;
 }
 
 .higher-or-lower {
@@ -42,7 +44,7 @@
 
 .score {
   font-size: 50px;
-  margin-top: -150px;
+  margin-top: -175px;
   text-align: center;
   color: white;
 }
