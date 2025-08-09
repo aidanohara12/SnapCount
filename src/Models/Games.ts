@@ -1,8 +1,8 @@
-import HigherOrLower from '../assets/GameLogos/HigherOrLower.png';
-import GuessThePlayer from '../assets/GameLogos/GuessThePlayer.png';
-import Matching from '../assets/GameLogos/Matching.png';
-import TheLadder from '../assets/GameLogos/TheLadder.png';
-import Wavelength from '../assets/GameLogos/Wavelength.png';
+import HigherOrLower from '../Assets/GameLogos/HigherOrLower.png';
+import GuessThePlayer from '../Assets/GameLogos/GuessThePlayer.png';
+import Matching from '../Assets/GameLogos/Matching.png';
+import TheLadder from '../Assets/GameLogos/TheLadder.png';
+import Wavelength from '../Assets/GameLogos/Wavelength.png';
 
 export interface Game {
     id: number

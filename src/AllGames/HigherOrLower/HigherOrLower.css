@@ -1,0 +1,68 @@
+.outer-container {
+  display: flex; 
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 50px; 
+  margin-top: -100px;
+  height: 600px;
+}
+
+.higher-or-lower-title {
+  font-size: 30px;
+  color: white;
+  margin: 20px;
+}
+.higher-or-lower-subtitle {
+  font-size: 15px;
+  color: white;
+  margin: 20px;
+}
+
+.uparrow, .downarrow, .higher-or-lower {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.uparrow, .downarrow {
+    font-size: 50px;
+    margin: 100px;
+}
+
+.uparrow button, .downarrow button {
+    background-color: transparent;
+    border: none;
+}
+
+.higher-or-lower {
+  display: inline;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score {
+  font-size: 50px;
+  margin-top: -175px;
+  text-align: center;
+  color: white;
+}
+
+.you-lost {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 100px;
+    color: white;
+}
+.you-lost button {
+    background-color: white;    
+    color: black;
+    display: inline;
+    margin: 10px;
+    padding: 10px;
+}
+
+

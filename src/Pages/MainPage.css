@@ -1,12 +1,14 @@
 html, body, #root {
   height: 100%;
   margin: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .parent {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-rows: 150px repeat(6, 1fr) 0px;
   gap: 8px;
   height: 100vh; 
   width: 100vw; 
@@ -24,7 +26,8 @@ html, body, #root {
     grid-row: span 6 / span 6;
     grid-row-start: 2;
      background-color: #2c3e50;
-     min-width: 345px;
+     min-width: 200px;
+     overflow: scroll;
 }
 
 .game-board {
@@ -33,11 +36,7 @@ html, body, #root {
     grid-column-start: 3;
     grid-row-start: 2;
      background-color: #4d4d4d;
+     min-width: 1200px;
 }
 
-.footer {
-    grid-column: span 6 / span 6;
-    grid-row-start: 8;
-     background-color: #1e1e1e;
-}
-        
+    
