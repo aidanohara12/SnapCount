@@ -19,17 +19,17 @@ function GuessThePlayer() {
     if (!option) return;
     const p = option.value;
     setCurrentPlayer(p);
-    setGuesses(prev => [p, ...prev]); // add to the top (or [...prev, p] for bottom)
+    setGuesses(prev => [...prev, p]); 
   }
 
   return (
-    <div>
-      <h1>Guess the Player</h1>
-      <h5>Try and Guess the Player!</h5>
+    <div className='guess-the-player'>
+      <h1 className='guess-the-player-title'>Guess the Player</h1>
+      <h5 className='guess-the-player-subtitle'>Try and Guess the Player!</h5>
 
-      <div>
+      <div className='guess-the-player-search'>
         <Select
-          options={players.map((p: Player) => ({
+          options={players.sort((a, b) => a.lastName.localeCompare(b.lastName)).map(p => ({
             value: p,
             label: `${p.firstName} ${p.lastName}`,
           }))}
