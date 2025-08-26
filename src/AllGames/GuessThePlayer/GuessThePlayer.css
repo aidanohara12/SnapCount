@@ -1,7 +1,7 @@
 .guess-the-player {  
     margin: 20px;
     overflow: scroll;
-    height: 75vh;
+    height: 70vh;
 }
 
 .guess-the-player-title {
@@ -34,4 +34,18 @@
 .guess-the-player-game-over h3 {
     font-size: 30px;
     margin: 0
+}
+
+.guess-the-player-table {
+  display: grid;
+  grid-template-columns: 120px 150px 120px 150px 120px 150px 120px; /* match widths for all columns */
+  align-items: center;
+  text-align: center;
+  color: white;
+  margin-bottom: 10px;
+  margin-left: 110px;
+}
+.guess-the-player-table h4 {
+    font-size: 20px;
+    margin: 0;
 }

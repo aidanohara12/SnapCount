@@ -10,5 +10,37 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: -140px;
+}
+
+.guess-the-college-options {
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -30px;
+}
+
+.guess-the-college-buttons button {
+    margin-inline: 15px;
+}
+
+.guess-the-college-game-over {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -30px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.guess-the-college-game-over h3 {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.guess-the-college-game-over h5 {
+    font-size: 15px;
     margin-top: 0px;
 }
