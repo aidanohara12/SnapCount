@@ -3,6 +3,7 @@ import GuessThePlayer from '../Assets/GameLogos/GuessThePlayer.png';
 import Matching from '../Assets/GameLogos/Matching.png';
 import TheLadder from '../Assets/GameLogos/TheLadder.png';
 import Wavelength from '../Assets/GameLogos/Wavelength.png';
+import GuessTheCollege from '../Assets/GameLogos/GuessTheCollege.png';
 
 export interface Game {
     id: number
@@ -39,7 +40,7 @@ export const games: Game[] = [
     },
     {
         id: 6,
-        name: 'Grid',
-        image: ' '
+        name: 'Guess The College',
+        image: GuessTheCollege
     },
 ]

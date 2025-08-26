@@ -66,7 +66,7 @@ export function PlayerGuess({ player, correctPlayer }: PlayerGuess) {
             <div className="player-card" style={{ backgroundColor: checkNumber(player.age, correctPlayer.age) === 0 ? "green" : checkNumber(player.age, correctPlayer.age) === 1 ? "yellow" : "f8f8f8" }}>
                 <h1>{player.age}</h1>
             </div>
-            <div className="player-card"style={{ backgroundColor: checkNumber(player.age, correctPlayer.age) === 0 ? "green" : checkNumber(player.age, correctPlayer.age) === 1 ? "yellow" : "f8f8f8" }}>
+            <div className="player-card"style={{ backgroundColor: checkNumber(player.jerseyNumber, correctPlayer.jerseyNumber) === 0 ? "green" : checkNumber(player.jerseyNumber, correctPlayer.jerseyNumber) === 1 ? "yellow" : "f8f8f8" }}>
                 <h1>{player.jerseyNumber}</h1>
             </div>
         </div>

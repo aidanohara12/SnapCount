@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import './GuessThePlayer.css';
 import type { Player } from '../../Models/Players';
 import { players } from '../../Models/Players';
@@ -7,36 +7,82 @@ import { PlayerGuess } from './PlayerGuess/PlayerGuess';
 
 function GuessThePlayer() {
   const [guesses, setGuesses] = useState<Player[]>([]);
-  const [currentPlayer, setCurrentPlayer] = useState<Player>(players[0]);
+  const [selectedOption, setSelectedOption] = useState<{ value: Player; label: string } | null>(null);
+  const [isGameOver, setIsGameOver] = useState(false);
+  const [wonGame, setWonGame] = useState(false);
 
-  // Pick a correct player once per mount
-  const correctPlayer = useMemo(() => {
-    const idx = Math.floor(Math.random() * players.length);
-    return players[idx];
-  }, []);
+
+   const pickRandom = useCallback(
+    () => players[Math.floor(Math.random() * players.length)],
+    []
+  );
+  
+  const [correctPlayer, setCorrectPlayer] = useState<Player>(pickRandom);
+
+  const options = useMemo(
+      () =>
+        [...players]
+          .sort((a, b) => a.lastName.localeCompare(b.lastName))
+          .map(p => ({ value: p, label: `${p.firstName} ${p.lastName}` })),
+      []
+    );
 
   function selectChanged(option: { value: Player } | null) {
-    if (!option) return;
+    if (!option || isGameOver) return;
     const p = option.value;
-    setCurrentPlayer(p);
-    setGuesses(prev => [...prev, p]); 
+
+    setGuesses(prev => {
+      const next = [...prev, p];
+
+      if (p === correctPlayer) {
+        setWonGame(true);
+        setIsGameOver(true);
+      } else if (next.length >= 7) { 
+        setWonGame(false);
+        setIsGameOver(true);
+      }
+
+      return next;
+    });
+
+    setSelectedOption(null); 
+  }
+
+  function resetGame() {
+    setGuesses([]);
+    setWonGame(false);
+    setIsGameOver(false);
+    setSelectedOption(null);
+    setCorrectPlayer(pickRandom());
   }
 
   return (
     <div className='guess-the-player'>
       <h1 className='guess-the-player-title'>Guess the Player</h1>
       <h5 className='guess-the-player-subtitle'>Try and Guess the Player!</h5>
+        
+      {(isGameOver && wonGame) && <div className='guess-the-player-game-over'>
+        <h3>Game Over You Won!</h3>
+        <button onClick={resetGame}>Play Again</button>
+      </div>}
+
+      {(isGameOver && !wonGame) && <div className='guess-the-player-game-over'>
+        <h3>Game Over - You Lose :(</h3>
+        <h5>The correct player was {correctPlayer.firstName} {correctPlayer.lastName}</h5>
+        <button onClick={resetGame}>Play Again</button>
+      </div>}
 
       <div className='guess-the-player-search'>
         <Select
-          options={players.sort((a, b) => a.lastName.localeCompare(b.lastName)).map(p => ({
-            value: p,
-            label: `${p.firstName} ${p.lastName}`,
-          }))}
+          options={options}
+          value={selectedOption}
           onChange={selectChanged}
           placeholder="Search a player..."
+          isClearable
+          isDisabled={isGameOver}
         />
       </div>
+
 
       <div>
         {guesses.map((p, idx) => (
