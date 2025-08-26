@@ -1,0 +1,28 @@
+.player-guess {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 16px;
+    justify-content: center;
+    align-items: center;      
+    width: 80%;
+    margin: 0 auto;   
+    margin-bottom: 10px;    
+}
+
+.player-card {
+    background-color: #f8f8f8;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 12px 16px;
+    width: 80px;
+    height: 40px;              
+    display: flex;            
+    align-items: center;       
+    justify-content: center;   
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.player-card h1 {
+    font-size: 14px;
+    margin: 0;
+}

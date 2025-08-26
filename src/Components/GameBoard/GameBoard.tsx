@@ -5,7 +5,7 @@ import TheLadder from '../../AllGames/TheLadder/TheLadder'
 import Wavelength from '../../AllGames/Wavelength/Wavelenth'
 import Matching from '../../AllGames/Matching/Matching'
 import GuessThePlayer from '../../AllGames/GuessThePlayer/GuessThePlayer'
-import Grid from '../../AllGames/Grid/Grid'
+import GuessTheCollege from '../../AllGames/GuessTheCollege/GuessTheCollege'
 
 type gameBoardProps = {
     game: Game
@@ -28,7 +28,7 @@ function GameBoard({game}: gameBoardProps) {
         return <GuessThePlayer />
     }
     else if(game.id === 6) {
-        return <Grid />
+        return <GuessTheCollege />
     }
 }
 
