@@ -68,7 +68,7 @@ function GuessThePlayer() {
 
       {(isGameOver && !wonGame) && <div className='guess-the-player-game-over'>
         <h3>Game Over - You Lose :(</h3>
-        <h5>The correct player was {correctPlayer.firstName} {correctPlayer.lastName}</h5>
+        <h4>The correct player was {correctPlayer.firstName} {correctPlayer.lastName}</h4>
         <button onClick={resetGame}>Play Again</button>
       </div>}
 
@@ -85,6 +85,17 @@ function GuessThePlayer() {
 
 
       <div>
+        {guesses.length > 0 && 
+        <div className='guess-the-player-table'>
+          <h4>Name</h4>
+          <h4>Team</h4>
+          <h4>Division</h4>
+          <h4>Position</h4>
+          <h4>Height</h4>
+          <h4>Age</h4>
+          <h4>Number</h4>
+        </div>
+        }
         {guesses.map((p, idx) => (
           <PlayerGuess
             key={`${p.firstName}-${p.lastName}-${idx}`}
