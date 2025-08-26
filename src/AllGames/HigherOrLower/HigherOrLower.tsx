@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef, use } from 'react';
 import './HigherOrLower.css'
-import DisplayPlayer from './DisplayPlayer';
+import DisplayPlayer from '../DisplayPlayer';
 import { players } from '../../Models/Players'
 
 function HigherOrLower() {
