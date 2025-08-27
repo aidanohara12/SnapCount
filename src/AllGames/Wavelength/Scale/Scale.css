@@ -1,0 +1,139 @@
+/* Layout */
+.scale {
+  color: #fff;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.scale-header h2 {
+  margin: 0 0 4px 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.scale-header p {
+  margin: 0 0 16px 0;
+  opacity: 0.85;
+}
+
+/* Two-column: input on left, slider on right (stacks on small screens) */
+.scale-body {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  align-items: start;
+  gap: 24px;
+}
+
+@media (max-width: 640px) {
+  .scale-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Input group */
+.scale-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.scale-input-group label {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.scale-input {
+  appearance: textfield;
+  background: #101418;
+  border: 1px solid #2a2f36;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 16px;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.scale-input:focus {
+  border-color: #5aa2ff;
+  box-shadow: 0 0 0 3px rgba(90, 162, 255, 0.2);
+}
+
+.scale-input::-webkit-outer-spin-button,
+.scale-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; /* hide chrome number arrows */
+}
+
+/* Slider wrapper + labels */
+.scale-slider-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.scale-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+}
+
+.scale-label.top {
+  margin-bottom: -6px;
+}
+
+.scale-label.bottom {
+  margin-top: -6px;
+}
+
+/* MUI Slider styling */
+.temperature-slider {
+  width: 250px; /* vertical slider width (visual track width) */
+}
+
+/* Make the overall slider area wider (container) */
+.temperature-slider.MuiSlider-root {
+  width: 80px; /* visual gutter around the bar */
+}
+
+/* Thicken the rail and track, and center them horizontally */
+.temperature-slider .MuiSlider-rail,
+.temperature-slider .MuiSlider-track {
+  width: 100px;                 /* <-- thickness of the bar */
+  left: 50%;                   /* center the bar in the wider root */
+  transform: translateX(-50%); /* keep perfectly centered */
+  border-radius: 12px;
+}
+
+/* Keep your gradient on the rail (full length) */
+.temperature-slider .MuiSlider-rail {
+  background: linear-gradient(to top, #004e92, #00c6ff, #fbd72b, #f9484a);
+  opacity: 1;
+}
+
+/* Subtle fill for the track (the filled portion) */
+.temperature-slider .MuiSlider-track {
+  background: rgba(255, 255, 255, 0.35);
+  border: none;
+}
+
+/* Enlarge and center the thumb relative to the thicker bar */
+.temperature-slider .MuiSlider-thumb {
+  width: 28px;
+  height: 28px;
+  background-color: #fff;
+  border: 2px solid #1f2937;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  left: 50%;                   /* center with the bar */
+  transform: translateX(-50%); /* align horizontally */
+}
+
+/* Optional: tweak the value label */
+.temperature-slider .MuiSlider-valueLabel {
+  background: #111827;
+  color: #fff;
+  border-radius: 8px;
+  padding: 2px 8px;
+}

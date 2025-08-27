@@ -1,0 +1,28 @@
+.wavelength {
+    margin-top: 0px;
+    margin-left: 20px;
+    overflow: scroll;
+    height: 70vh;
+    display: flex;
+}
+
+.scale {
+    margin-left: 50px;
+    overflow: scroll;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wavelength-game-over {
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    width: 450px;
+}
+
+.wavelength-game-over h3, h5 {
+    padding: 10px;
+}
