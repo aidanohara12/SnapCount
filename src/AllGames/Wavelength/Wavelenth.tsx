@@ -7,7 +7,7 @@ import "./Wavelength.css";
 type option = { value: string; label: string };
 
 function Wavelength() {
-    const API_KEY = "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"
+    const API_KEY = import.meta.env.VITE_SNAPCOUNT_API_KEY
 
     const allQuestions: string[] = [
         "Give me a current quarterback",
