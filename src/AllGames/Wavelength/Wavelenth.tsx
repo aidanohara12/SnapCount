@@ -96,6 +96,9 @@ function Wavelength() {
 
         Constraints:
         - The answer MUST match the requested position/category (e.g., if asked for a "current RB", return a current running back).
+        - When it says current player it must be a player who currently plays in the league. The rating should come on how good they have played in last 1-2 seasons and how good they should be this year. 
+        - Take into account what teams players now play for and how they have been doing in the past.
+        - Use ESPN/NFL.com/Pro Football Reference to get the ratings.
         - Prefer variety; do NOT always choose the most obvious star. Mix in lesser-known role players when appropriate.
         - Randomize among equally suitable candidates to avoid repeats.
         - NEVER return: Tee Higgins, Kirk Cousins, James Conner.
@@ -160,7 +163,6 @@ function Wavelength() {
     }
 
     function checkGuess() {
-        console.log(value);
         const diff = Math.abs(value - correct);
         if (diff === 0) {
             setGuessText('Wow! You got it right on the dot! Great work!');
