@@ -2,18 +2,25 @@ import * as React from 'react';
 import Stack from '@mui/material/Stack';
 import Slider from '@mui/material/Slider';
 import './Scale.css';
+import { useEffect, useState } from 'react';
 
 type ScaleProps = {
   value: number;
   setValue: (value: number) => void;
   totalGuesses: number;
   setIsGameOver: (value: boolean) => void;
+  checkGuess: () => void;
 };
 
-export default function Scale({ value, setValue, totalGuesses, setIsGameOver }: ScaleProps) {
-  const [inputText, setInputText] = React.useState<string>(String(value));
+export default function Scale({ value, setValue, totalGuesses, setIsGameOver, checkGuess}: ScaleProps) {
+  const [inputText, setInputText] = useState<string>(String(value));
 
-  React.useEffect(() => {
+  useEffect(() => {
+    console.log('Scale mounted');
+    return () => console.log('Scale unmounted');
+  }, []);
+
+  useEffect(() => {
     setInputText(String(value));
   }, [value]);
 
@@ -32,8 +39,8 @@ export default function Scale({ value, setValue, totalGuesses, setIsGameOver }: 
     }
     const n = Number(inputText);
     const v = clamp(Number.isNaN(n) ? value : n);
-    setValue(v);                 // <-- updates parent
-    setInputText(String(v));     // keep input in sync
+    setValue(v);                
+    setInputText(String(v));    
   }
 
   return (
@@ -59,7 +66,7 @@ export default function Scale({ value, setValue, totalGuesses, setIsGameOver }: 
             onKeyDown={(e) => e.key === 'Enter' && commitInput()}
           />
 
-          <button disabled={totalGuesses !== 3} onClick={() => setIsGameOver(true)}>
+          <button type="button" disabled={totalGuesses !== 3} onClick={(e) => {e.preventDefault();commitInput(); checkGuess(); setIsGameOver(true)}}>
             Submit Guess
           </button>
         </div>
@@ -70,14 +77,14 @@ export default function Scale({ value, setValue, totalGuesses, setIsGameOver }: 
             <Slider
               className="temperature-slider"
               orientation="vertical"
-              value={value}             // controlled by parent
+              value={value}          
               min={0}
               max={100}
               step={1}
               valueLabelDisplay="on"
               onChange={(_, newValue) => {
                 const v = clamp(newValue as number);
-                setValue(v);           // <-- updates parent
+                setValue(v);     
                 setInputText(String(v));
               }}
             />

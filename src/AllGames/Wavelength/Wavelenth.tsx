@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Select from "react-select";
 import ChatBox from "./ChatBox/ChatBox";
 import Scale from "./Scale/Scale";
@@ -8,6 +8,11 @@ type option = { value: string; label: string };
 
 function Wavelength() {
     const API_KEY = import.meta.env.VITE_SNAPCOUNT_API_KEY
+
+    useEffect(() => {
+        console.log('Wavelength mounted');
+        return () => console.log('Wavelength unmounted');
+    }, []);
 
     const allQuestions: string[] = [
         "Give me a current quarterback",
@@ -55,9 +60,8 @@ function Wavelength() {
 
     const [selectedOption, setSelectedOption] = useState<option | null>(null);
     const [asked, setAsked] = useState<option[]>([]);
-    const [value, setValue] = useState(50);
-    let randomNumber = Math.floor(Math.random() * 100);
-    const [correct, setCorrect] = useState(randomNumber);
+    const [value, setValue] = useState<number>(50);
+    const [correct, setCorrect] = useState(() => Math.floor(Math.random() * 100));
     const [aiReponse, setAiResponse] = useState<string[]>([]);
     const [isGameOver, setIsGameOver] = useState(false);
     const [guessText, setGuessText] = useState('');
@@ -123,10 +127,8 @@ function Wavelength() {
         });
 
         const data = await res.json();
-        console.log(data);
         const text: string = data.choices?.[0]?.message?.content?.trim() ?? "";
         setAiResponse(prev => [...prev, text]);  // now type checks
-        console.log(text);
         return text;
     }
 
@@ -158,7 +160,7 @@ function Wavelength() {
     }
 
     function checkGuess() {
-        console.log(value)
+        console.log(value);
         const diff = Math.abs(value - correct);
         if (diff === 0) {
             setGuessText('Wow! You got it right on the dot! Great work!');
@@ -215,7 +217,7 @@ function Wavelength() {
             </div>
 
             <div className="scale">
-                <Scale value={value} setValue={setValue} totalGuesses={asked.length} setIsGameOver={setIsGameOver} />
+                <Scale value={value} setValue={setValue} totalGuesses={asked.length} setIsGameOver={setIsGameOver} checkGuess={checkGuess}/>
             </div>
 
         </div>
