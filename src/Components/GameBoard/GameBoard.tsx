@@ -1,7 +1,7 @@
 import './GameBoard.css'
 import type { Game } from '../../Models/Games'
 import HigherOrLower from '../../AllGames/HigherOrLower/HigherOrLower'
-import TheLadder from '../../AllGames/TheLadder/TheLadder'
+import StatLine from '../../AllGames/StatLine/StatLine'
 import Wavelength from '../../AllGames/Wavelength/Wavelenth'
 import Matching from '../../AllGames/Matching/Matching'
 import GuessThePlayer from '../../AllGames/GuessThePlayer/GuessThePlayer'
@@ -16,19 +16,19 @@ function GameBoard({game}: gameBoardProps) {
         return <HigherOrLower />
     }
     else if(game.id === 2) {
-        return <TheLadder />
+        return <GuessThePlayer />
     }
     else if(game.id === 3) {
         return <Wavelength />
     }
     else if(game.id === 4) {
-        return <Matching />
+        return <GuessTheCollege />
     }
     else if(game.id === 5) {
-        return <GuessThePlayer />
+        return <StatLine />
     }
     else if(game.id === 6) {
-        return <GuessTheCollege />
+        return <Matching />
     }
 }
 

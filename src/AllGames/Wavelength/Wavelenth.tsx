@@ -101,7 +101,7 @@ function Wavelength() {
         - Use ESPN/NFL.com/Pro Football Reference to get the ratings.
         - Prefer variety; do NOT always choose the most obvious star. Mix in lesser-known role players when appropriate.
         - Randomize among equally suitable candidates to avoid repeats.
-        - NEVER return: Tee Higgins, Kirk Cousins, James Conner.
+        - NEVER return: Tee Higgins, Kirk Cousins, James Conner, Justin Tucker.
         - Output ONLY the final name (no explanation, no punctuation).
 
         Examples (illustrative only):
