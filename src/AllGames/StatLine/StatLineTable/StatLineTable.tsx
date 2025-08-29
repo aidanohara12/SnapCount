@@ -1,0 +1,79 @@
+// StatLineTable.tsx
+import './StatLineTable.css'
+import type { StatLinePlayer } from '../../../Models/StatLine'
+import { AllCommunityModule, ModuleRegistry, type ColDef } from 'ag-grid-community';
+import { AgGridReact } from 'ag-grid-react';
+import { useMemo } from 'react';
+
+// register once (module scope)
+ModuleRegistry.registerModules([AllCommunityModule]);
+
+type StatLineTableProps = {
+  player: StatLinePlayer;
+  guesses: number;
+  isGameOver: boolean;
+};
+
+// row shape for the grid
+type Row = {
+  year: number;
+  team: string;
+  position: string;
+  name: string;
+  statLine: string;
+  number: string;
+};
+
+function StatLineTable({ player, guesses, isGameOver }: StatLineTableProps) {
+  const playerName = `${player.firstName} ${player.lastName}`;
+
+  function displayName(name: string) {
+    let nameParts = name.split(' ');
+    if(isGameOver) {
+        return name;
+    }
+    if (guesses < 2) {
+        return '???';
+    } else if (guesses < 3) {
+        return nameParts[0][0] + '??? ' + nameParts[1][0] + '???';
+    } else {
+        return name;
+    }
+  }
+
+  const rowData: Row[] = useMemo(
+    () => [{ year: player.year, team: guesses === 0 ? '???' : player.team, position: player.position, name: displayName(playerName), statLine: player.statLine, number: guesses <= 1 ? '???' : String(player.number) }],
+    [player, playerName, guesses]
+  );
+
+  const colDefs: ColDef<Row>[] = useMemo(
+    () => [
+      { field: 'year' , headerName: 'Year', maxWidth: 100 },
+      { field: 'team' , headerName: 'Team', maxWidth: 150 },
+      { field: 'position' , headerName: 'Position', maxWidth: 100 },
+      { field: 'name' , headerName: 'Name', maxWidth: 200 },
+      { field: 'statLine' , headerName: 'Stat Line', minWidth: 200 },
+      { field: 'number' , headerName: 'Number', maxWidth: 100 },
+    ],
+    []
+  );
+
+  const defaultColDef: ColDef<Row> = useMemo(
+    () => ({ flex: 1, resizable: true, sortable: true }),
+    []
+  );
+
+  return (
+    <div className="statline-table">
+      <div style={{ height: 100, width: 1100 }}>
+        <AgGridReact<Row>
+          rowData={rowData}
+          columnDefs={colDefs}
+          defaultColDef={defaultColDef}
+        />
+      </div>
+    </div>
+  );
+}
+
+export default StatLineTable;

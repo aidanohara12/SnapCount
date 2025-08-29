@@ -1,5 +1,5 @@
 
-type StatLine = {
+export type StatLinePlayer = {
     position: string
     firstName: string
     lastName: string
@@ -9,7 +9,7 @@ type StatLine = {
     team: string
 }
 
-export const statLinePlayers: StatLine[] = [
+export const statLinePlayers: StatLinePlayer[] = [
   { position: "QB", firstName: "Joe", lastName: "Burrow", statLine: "4,918 Yards, 43 TDs, 9 INTs, 70.6% CMP, 17 GP", year: 2024, number: 9, team: "Bengals" },
   { position: "QB", firstName: "Jared", lastName: "Goff", statLine: "4,629 Yards, 37 TDs, 12 INTs, 72.4% CMP, 17 GP", year: 2024, number: 16, team: "Lions" },
   { position: "QB", firstName: "Baker", lastName: "Mayfield", statLine: "4,500 Yards, 41 TDs, 16 INTs, 71.4% CMP, 17 GP", year: 2024, number: 6, team: "Buccaneers" },
