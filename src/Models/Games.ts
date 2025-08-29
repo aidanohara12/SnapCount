@@ -1,7 +1,7 @@
 import HigherOrLower from '../Assets/GameLogos/HigherOrLower.png';
 import GuessThePlayer from '../Assets/GameLogos/GuessThePlayer.png';
 import Matching from '../Assets/GameLogos/Matching.png';
-import TheLadder from '../Assets/GameLogos/TheLadder.png';
+import StatLine from '../Assets/GameLogos/StatLine.png';
 import Wavelength from '../Assets/GameLogos/Wavelength.png';
 import GuessTheCollege from '../Assets/GameLogos/GuessTheCollege.png';
 
@@ -20,8 +20,8 @@ export const games: Game[] = [
     },
     {
         id: 2,
-        name: 'The Ladder',
-        image: TheLadder
+        name: 'Guess the Player',
+        image: GuessThePlayer
     },
     {
         id: 3,
@@ -30,17 +30,17 @@ export const games: Game[] = [
     },
     {
         id: 4,
-        name: 'Matching',
-        image: Matching
+        name: 'Guess The College',
+        image: GuessTheCollege
     },
     {
         id: 5,
-        name: 'Guess the Player',
-        image: GuessThePlayer
+        name: 'StatLine',
+        image: StatLine
     },
     {
         id: 6,
-        name: 'Guess The College',
-        image: GuessTheCollege
+        name: 'Matching',
+        image: Matching
     },
 ]
