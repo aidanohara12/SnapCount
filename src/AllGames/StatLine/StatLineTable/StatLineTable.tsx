@@ -31,18 +31,39 @@ function StatLineTable({ player, guesses, isGameOver }: StatLineTableProps) {
     let nameParts = name.split(' ');
     if(isGameOver) {
         return name;
-    }
-    if (guesses < 2) {
-        return '???';
-    } else if (guesses < 3) {
-        return nameParts[0][0] + '??? ' + nameParts[1][0] + '???';
     } else {
-        return name;
+      return '????';
     }
-  }
+}
+    function displayPosition(position: string) {
+        if (isGameOver) {
+            return position;
+        }
+        if(position === 'TE' || position === 'WR') {
+            if(guesses < 2) {
+                return '???';
+            } else if (guesses < 3) {
+                return position;
+            }
+        } else {
+            return position;
+        }
+        return position;
+    }
+
+  function displayTeam(team: string, division: string) {
+    if (guesses < 1) {
+      return '???';
+    } else if (guesses < 2) {
+      return division.split(' ')[0];
+    } else if (guesses < 3) {
+      return division;
+    }
+    return team;
+}
 
   const rowData: Row[] = useMemo(
-    () => [{ year: player.year, team: guesses === 0 ? '???' : player.team, position: player.position, name: displayName(playerName), statLine: player.statLine, number: guesses <= 1 ? '???' : String(player.number) }],
+    () => [{ year: player.year, team: displayTeam(player.team, player.division), position: displayPosition(player.position), name: displayName(playerName), statLine: player.statLine, number: guesses <= 1 ? '???' : String(player.number) }],
     [player, playerName, guesses]
   );
 

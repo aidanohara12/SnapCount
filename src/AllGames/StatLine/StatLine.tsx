@@ -10,7 +10,7 @@ type Option = { value: StatLinePlayer; label: string };
 function StatLine() {
     const players = statLinePlayers
     const allPlayers: StatLinePlayer[] = [];
-    const [player, setPlayer] = useState<StatLinePlayer>(players[0])
+    const [player, setPlayer] = useState<StatLinePlayer>(players[0]);
     const [selectedOption, setSelectedOption] = useState<{ value: StatLinePlayer; label: string } | null>(null);
     const [guessedPlayer, setGuessedPlayer] = useState<StatLinePlayer | null>(null);
     const [wonGame, setWonGame] = useState(false);
@@ -33,14 +33,24 @@ function StatLine() {
 
     function getRandomPlayer() {
         const randomIndex = Math.floor(Math.random() * players.length);
-        return setPlayer(players[randomIndex]);
+        setPlayer(players[randomIndex]);
+        return players[randomIndex];
+    }
+
+    function shuffle<T>(array: T[]): T[] {
+        const copy = [...array];
+        for (let i = copy.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [copy[i], copy[j]] = [copy[j], copy[i]];
+        }
+        return copy;
     }
 
     function selectChanged(option: Option | null) {
         if (!option) return;
         setSelectedOption(null);
         setGuessedPlayer(option.value);
-        checkGuess(option.value);  
+        checkGuess(option.value);
     }
 
     function checkGuess(picked: StatLinePlayer) {
@@ -71,14 +81,25 @@ function StatLine() {
         getRandomPlayer();
     }, []);
 
+    function checkPosition(a: StatLinePlayer) {
+        if (player.position === 'WR' || player.position === 'TE') {
+            return a.position === 'WR' || a.position === 'TE';
+        } else {
+            return a.position === player.position;
+        }
+    }
+
     const options = useMemo(
         () =>
-            [...uniquePlayers]
-                .filter((a) => a.position === player.position)
-                .map(p => ({ value: p, label: `${p.firstName} ${p.lastName}` })),
-        []
+            shuffle(
+                [...uniquePlayers]
+                    .filter((a) => checkPosition(a))
+                    .map(p => ({ value: p, label: `${p.firstName} ${p.lastName}` }))
+            ),
+        [uniquePlayers, player]
     );
 
+    
     function resetGame() {
         setGuesses(0);
         setWonGame(false);
@@ -109,7 +130,10 @@ function StatLine() {
             </div>
 
             <div className='statline-guesses'>
-                <h4>You have {3 - guesses} guesses left</h4>
+                {!isGameOver && <div className='statline-game-over'>
+                    <h4>You have {3 - guesses} guesses left</h4>
+                </div>}
+
                 {isGameOver && <div className='statline-game-over'>
                     {wonGame && <div className='statline-game-over'>
                         <h3>Game Over! You Win!</h3>
