@@ -1,4 +1,4 @@
-export type OnTheClock = {
+export type OnTheClockPlayer = {
     firstName: string
     lastName: string
     year: number
@@ -10,7 +10,7 @@ export type OnTheClock = {
     college: string
 }
 
-export const onTheClockPlayers: OnTheClock[] = [
+export const onTheClockPlayers: OnTheClockPlayer[] = [
   { firstName: "Cam", lastName: "Ward", year: 2025, round: 1, pick: 1, position: "QB", team: "TEN", division: "AFC South", college: "Miami (FL)" },
   { firstName: "Travis", lastName: "Hunter", year: 2025, round: 1, pick: 2, position: "WR", team: "JAX", division: "AFC South", college: "Colorado" },
   { firstName: "Abdul", lastName: "Carter", year: 2025, round: 1, pick: 3, position: "LB", team: "NYG", division: "NFC East", college: "Penn State" },
