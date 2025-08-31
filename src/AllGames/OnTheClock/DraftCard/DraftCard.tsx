@@ -4,13 +4,27 @@ import DraftLogo from '../../../Assets/DraftLogo.png'
 
 type DraftCardProps = {
     player: OnTheClockPlayer
+    isGameOver: boolean
+    guesses: number
 }
 
-function DraftCard({ player }: DraftCardProps) {
+function DraftCard({ player, isGameOver, guesses }: DraftCardProps) {
+
+    function displayName(name: string) {
+        if(isGameOver) {
+            return name;
+        } else if(guesses >= 2) {
+            return name[0] + '?????';
+        } else {
+          return '????';
+        }
+    }
+
     return (
         <div className='draft-card'>
             <div className='draft-card-background'>
                 <img src={DraftLogo} alt="DraftLogo" />
+                <h3>{player.year} Draft</h3>
                 <div className='draft-card-info'>
                     <div className='round'>
                         <h3>Round #:</h3>
@@ -21,13 +35,13 @@ function DraftCard({ player }: DraftCardProps) {
                     <div className='team'>
                         <h3>Choice From:</h3>
                         <div className='underline'>
-                            <h3 className='text'>{player.team}</h3>
+                            <h3 className='text-team'>{player.team}</h3>
                         </div>
                     </div>
                     <div className='playerName'>
                         <h3>Name:</h3>
                         <div className='underline'>
-                            <h3 className='text'>{player.firstName} {player.lastName}</h3>
+                            <h3 className='text-name'>{displayName(player.firstName)} {displayName(player.lastName)}</h3>
                         </div>
                     </div>
                     <div className='position'>

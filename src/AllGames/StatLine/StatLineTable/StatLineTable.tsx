@@ -62,8 +62,19 @@ function StatLineTable({ player, guesses, isGameOver }: StatLineTableProps) {
     return team;
 }
 
+function displayNumber(number: number) {
+  if(isGameOver) {
+    return String(number);
+  }
+    if (guesses <= 1) {
+        return '???';
+    } else {
+        return String(number);
+    }
+}
+
   const rowData: Row[] = useMemo(
-    () => [{ year: player.year, team: displayTeam(player.team, player.division), position: displayPosition(player.position), name: displayName(playerName), statLine: player.statLine, number: guesses <= 1 ? '???' : String(player.number) }],
+    () => [{ year: player.year, team: displayTeam(player.team, player.division), position: displayPosition(player.position), name: displayName(playerName), statLine: player.statLine, number: displayNumber(player.number) }],
     [player, playerName, guesses]
   );
 
