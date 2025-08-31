@@ -24,7 +24,7 @@ function DraftCard({ player }: DraftCardProps) {
                             <h3 className='text'>{player.team}</h3>
                         </div>
                     </div>
-                    <div className='name'>
+                    <div className='playerName'>
                         <h3>Name:</h3>
                         <div className='underline'>
                             <h3 className='text'>{player.firstName} {player.lastName}</h3>

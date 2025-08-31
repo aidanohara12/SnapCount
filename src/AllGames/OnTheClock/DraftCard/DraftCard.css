@@ -35,7 +35,7 @@
     height: 20%;
 }
 
-.round, .team, .name, .position, .college, .pick {
+.round, .team, .playerName, .position, .college, .pick {
     display: flex;
     align-items: center;
     justify-content: space-between; 
@@ -43,7 +43,7 @@
     margin: 10px 0;     
 }
 
-.round h3, .team h3, .name h3, .position h3, .college h3, .pick h3 {
+.round h3, .team h3, .playerName h3, .position h3, .college h3, .pick h3 {
     font-size: 15px;
     color: black;
     margin: 0;
@@ -57,8 +57,18 @@
     align-items: center;   
 }
 
+@font-face {
+  font-family: 'IndieFlower';
+  src: url('/fonts/IndieFlower.woff2') format('woff2'),
+       url('/fonts/IndieFlower.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .text {
-    font-size: 16px;
-    color: black;
-    padding: 0 5px;               
+  font-size: 16px;
+  color: black;
+  padding: 0 5px;
+  padding-left: 150px;
+  font-family: 'IndieFlower', cursive ;
 }
