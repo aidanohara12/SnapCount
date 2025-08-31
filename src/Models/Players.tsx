@@ -211,6 +211,7 @@ export const players: Player[] = [
 { firstName: "Cameron", lastName: "Mitchell", jerseyNumber: 29, teamPrimaryColor: "#311D00", teamSecondaryColor: "#FF3C00", position: "CB", team: "Cleveland Browns", height: "6'0\"", age: 22, division: "AFC North", college: "Northwestern" },
 
 // Cowboys
+{ firstName: "Kenny", lastName: "Clark", jerseyNumber: 97, teamPrimaryColor: "#041E42", teamSecondaryColor: "#869397", position: "DT", team: "Dallas Cowboys", height: "6'3\"", age: 29, division: "NFC East", college: "UCLA" },
 { firstName: "George", lastName: "Pickens", jerseyNumber: 3, teamPrimaryColor: "#041E42", teamSecondaryColor: "#869397", position: "WR", team: "Dallas Cowboys", height: "6'3\"", age: 24, division: "NFC East", college: "Georgia" },
 { firstName: "Jalen", lastName: "Tolbert", jerseyNumber: 1, teamPrimaryColor: "#041E42", teamSecondaryColor: "#869397", position: "WR", team: "Dallas Cowboys", height: "6'3\"", age: 25, division: "NFC East", college: "South Alabama" },
 { firstName: "CeeDee", lastName: "Lamb", jerseyNumber: 88, teamPrimaryColor: "#041E42", teamSecondaryColor: "#869397", position: "WR", team: "Dallas Cowboys", height: "6'2\"", age: 26, division: "NFC East", college: "Oklahoma" },
@@ -225,7 +226,6 @@ export const players: Player[] = [
 { firstName: "Marshawn", lastName: "Kneeland", jerseyNumber: 94, teamPrimaryColor: "#041E42", teamSecondaryColor: "#869397", position: "DE", team: "Dallas Cowboys", height: "6'3\"", age: 23, division: "NFC East", college: "Western Michigan" },
 { firstName: "Osa", lastName: "Odighizuwa", jerseyNumber: 97, teamPrimaryColor: "#041E42", teamSecondaryColor: "#869397", position: "DT", team: "Dallas Cowboys", height: "6'2\"", age: 26, division: "NFC East", college: "UCLA" },
 { firstName: "Solomon", lastName: "Thomas", jerseyNumber: 90, teamPrimaryColor: "#041E42", teamSecondaryColor: "#869397", position: "DT", team: "Dallas Cowboys", height: "6'3\"", age: 29, division: "NFC East", college: "Stanford" },
-{ firstName: "Micah", lastName: "Parsons", jerseyNumber: 11, teamPrimaryColor: "#041E42", teamSecondaryColor: "#869397", position: "DE", team: "Dallas Cowboys", height: "6'3\"", age: 26, division: "NFC East", college: "Penn State" },
 { firstName: "DeMarvion", lastName: "Overshown", jerseyNumber: 0, teamPrimaryColor: "#041E42", teamSecondaryColor: "#869397", position: "LB", team: "Dallas Cowboys", height: "6'3\"", age: 24, division: "NFC East", college: "Texas" },
 { firstName: "Kenneth", lastName: "Murray Jr.", jerseyNumber: 59, teamPrimaryColor: "#041E42", teamSecondaryColor: "#869397", position: "LB", team: "Dallas Cowboys", height: "6'2\"", age: 26, division: "NFC East", college: "Oklahoma" },
 { firstName: "Trevon", lastName: "Diggs", jerseyNumber: 7, teamPrimaryColor: "#041E42", teamSecondaryColor: "#869397", position: "CB", team: "Dallas Cowboys", height: "6'1\"", age: 27, division: "NFC East", college: "Alabama" },
@@ -285,8 +285,9 @@ export const players: Player[] = [
 { firstName: "Amik", lastName: "Robertson", jerseyNumber: 21, teamPrimaryColor: "#0076B6", teamSecondaryColor: "#B0B7BC", position: "CB", team: "Detroit Lions", height: "5'9\"", age: 27, division: "NFC North", college: "Louisiana Tech" },
 
 // Packers
+{ firstName: "Micah", lastName: "Parsons", jerseyNumber: 1, teamPrimaryColor: "#203731", teamSecondaryColor: "#FFB612", position: "DE", team: "Green Bay Packers", height: "6'3\"", age: 26, division: "NFC North", college: "Penn State" },
 { firstName: "Romeo", lastName: "Doubs", jerseyNumber: 87, teamPrimaryColor: "#203731", teamSecondaryColor: "#FFB612", position: "WR", team: "Green Bay Packers", height: "6'2\"", age: 25, division: "NFC North", college: "Nevada" },
-{ firstName: "Matthew", lastName: "Golden", jerseyNumber: 22, teamPrimaryColor: "#203731", teamSecondaryColor: "#FFB612", position: "WR", team: "Green Bay Packers", height: "6'0\"", age: 20, division: "NFC North", college: "Houston" },
+{ firstName: "Matthew", lastName: "Golden", jerseyNumber: 0, teamPrimaryColor: "#203731", teamSecondaryColor: "#FFB612", position: "WR", team: "Green Bay Packers", height: "6'0\"", age: 20, division: "NFC North", college: "Houston" },
 { firstName: "Jayden", lastName: "Reed", jerseyNumber: 11, teamPrimaryColor: "#203731", teamSecondaryColor: "#FFB612", position: "WR", team: "Green Bay Packers", height: "5'11\"", age: 24, division: "NFC North", college: "Michigan State" },
 { firstName: "Rasheed", lastName: "Walker", jerseyNumber: 63, teamPrimaryColor: "#203731", teamSecondaryColor: "#FFB612", position: "T", team: "Green Bay Packers", height: "6'6\"", age: 24, division: "NFC North", college: "Penn State" },
 { firstName: "Aaron", lastName: "Banks", jerseyNumber: 65, teamPrimaryColor: "#203731", teamSecondaryColor: "#FFB612", position: "G", team: "Green Bay Packers", height: "6'5\"", age: 27, division: "NFC North", college: "Notre Dame" },
@@ -297,7 +298,6 @@ export const players: Player[] = [
 { firstName: "Jordan", lastName: "Love", jerseyNumber: 10, teamPrimaryColor: "#203731", teamSecondaryColor: "#FFB612", position: "QB", team: "Green Bay Packers", height: "6'4\"", age: 26, division: "NFC North", college: "Utah State" },
 { firstName: "Josh", lastName: "Jacobs", jerseyNumber: 8, teamPrimaryColor: "#203731", teamSecondaryColor: "#FFB612", position: "RB", team: "Green Bay Packers", height: "5'10\"", age: 27, division: "NFC North", college: "Alabama" },
 { firstName: "Rashan", lastName: "Gary", jerseyNumber: 52, teamPrimaryColor: "#203731", teamSecondaryColor: "#FFB612", position: "DE", team: "Green Bay Packers", height: "6'5\"", age: 27, division: "NFC North", college: "Michigan" },
-{ firstName: "Kenny", lastName: "Clark", jerseyNumber: 97, teamPrimaryColor: "#203731", teamSecondaryColor: "#FFB612", position: "DT", team: "Green Bay Packers", height: "6'3\"", age: 29, division: "NFC North", college: "UCLA" },
 { firstName: "Devonte", lastName: "Wyatt", jerseyNumber: 95, teamPrimaryColor: "#203731", teamSecondaryColor: "#FFB612", position: "DT", team: "Green Bay Packers", height: "6'3\"", age: 26, division: "NFC North", college: "Georgia" },
 { firstName: "Lukas", lastName: "Van Ness", jerseyNumber: 90, teamPrimaryColor: "#203731", teamSecondaryColor: "#FFB612", position: "DE", team: "Green Bay Packers", height: "6'5\"", age: 23, division: "NFC North", college: "Iowa" },
 { firstName: "Quay", lastName: "Walker", jerseyNumber: 7, teamPrimaryColor: "#203731", teamSecondaryColor: "#FFB612", position: "LB", team: "Green Bay Packers", height: "6'4\"", age: 24, division: "NFC North", college: "Georgia" },
