@@ -58,7 +58,7 @@ form .input-box {
 }
 
 .input-box .field.mess {
-    height: 100px !important;
+    height: 80px !important;
     resize: none;
 }
 

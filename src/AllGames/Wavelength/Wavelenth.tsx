@@ -193,7 +193,7 @@ function Wavelength() {
             <div>
                 <h1 style={{ color: "white" }}>Wavelength</h1>
                 <h3 style={{ color: "white", width: "600px", marginTop: "-20px" }}>
-                    Ask a question and the AI will respond based on the hidden number!
+                    Ask 3 questions and the AI will respond based on the hidden number!
                 </h3>
 
                 <div style={{ maxWidth: 520 }}>

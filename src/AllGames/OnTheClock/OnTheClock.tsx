@@ -76,7 +76,7 @@ function OnTheClock() {
   return (
     <div className='on-the-clock'>
       <h2>On The Clock</h2>
-      <h4>Try and guess the player based on their draft card!</h4>
+      <h4>Try and guess the player based on their draft card! You have {3 - guesses} guesses left.</h4>
 
       <div className='on-the-clock-search'>
         <Select
