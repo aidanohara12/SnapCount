@@ -1,10 +1,10 @@
-import higherLogo       from '@/Assets/GameLogos/HigherOrLower.png'
-import GuessThePlayer   from '@/Assets/GameLogos/GuessThePlayer.png'
-import OnTheClock       from '@/Assets/GameLogos/OnTheClock.png'
-import StatLine         from '@/Assets/GameLogos/StatLine.png'
-import Wavelength       from '@/Assets/GameLogos/Wavelength.png'
-import GuessTheCollege  from '@/Assets/GameLogos/GuessTheCollege.png'
-import ContactUs        from '@/Assets/ContactUs.png'
+import higherLogo       from '@/assets/GameLogos/HigherOrLower.png'
+import GuessThePlayer   from '@/assets/GameLogos/GuessThePlayer.png'
+import OnTheClock       from '@/assets/GameLogos/OnTheClock.png'
+import StatLine         from '@/assets/GameLogos/StatLine.png'
+import Wavelength       from '@/assets/GameLogos/Wavelength.png'
+import GuessTheCollege  from '@/assets/GameLogos/GuessTheCollege.png'
+import ContactUs        from '@/assets/ContactUs.png'
 
 export interface Game {
     id: number
