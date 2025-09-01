@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install deps
+        run: npm ci
+
+
+      - name: Call API with secret
+        env:
+          API_TOKEN: ${{ secrets.VITE_SNAPCOUNT_API_KEY }}  
+        run: |
+          # Don't echo secrets. Use them directly in commands.
+          curl -H "Authorization: Bearer $API_TOKEN" https://api.example.com/ping
+
+
+      - name: Run tests
+        run: npm test --if-present
+
+      - name: Build
+        run: npm run build --if-present
