@@ -67,7 +67,7 @@ function Wavelength() {
 
 
 
-    const API_BASE = import.meta.env.VITE_API_BASE_URL || "";
+    const API_BASE = 'https://snapcount-api.snapcount.workers.dev'
 
     async function callOpenAIAPI(question: string, correct: number) {
         const res = await fetch(`${API_BASE}/api/wavelength`, {
