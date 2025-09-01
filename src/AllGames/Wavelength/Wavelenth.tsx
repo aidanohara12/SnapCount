@@ -80,7 +80,6 @@ function Wavelength() {
         const bodyText = await res.text();
 
         if (!res.ok) {
-            // try to extract error message, but DON'T re-read the body
             try {
                 const { error } = JSON.parse(bodyText);
                 throw new Error(error || bodyText);

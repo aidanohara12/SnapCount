@@ -7,6 +7,10 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+
+    # 👇 IMPORTANT: this must match your Environment name in Settings
+    environment: production   # or '.env.production' if you keep that name
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,20 +24,41 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      - name: Sanity check OpenAI key
+      - name: Build (Vite)
+        run: npm run build
         env:
-          OPENAI_API_KEY: ${{ secrets.VITE_SNAPCOUNT_API_KEY }}   # <-- your repo secret
-        run: |
-          set -euo pipefail
-          curl -sS -f https://api.openai.com/v1/models \
-            -H "Authorization: Bearer ${OPENAI_API_KEY}" \
-            -H "Content-Type: application/json" \
-          | head -c 200
-          echo
-          echo "OpenAI key looks usable."
+          # 👇 Make it available to Vite at build time
+          VITE_API_BASE_URL: ${{ secrets.VITE_API_BASE_URL }}
 
+      # (Optional) run tests before/after build
       - name: Run tests
         run: npm test --if-present
 
-      - name: Build
-        run: npm run build --if-present
+  deploy:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Restore build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build
+          path: dist
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

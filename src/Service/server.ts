@@ -16,9 +16,9 @@ app.post("/api/wavelength", async (req, res) => {
   try {
     const { question, correct } = req.body as { question: string; correct: number };
 
-    const OPENAI_KEY = process.env.OPENAI_API_KEY || process.env.VITE_SNAPCOUNT_API_KEY;
+    const API_BASE = import.meta.env.VITE_API_BASE_URL || "";
 
-    if (!OPENAI_KEY) {
+    if (!API_BASE) {
       return res.status(500).json({ error: "Missing OPENAI_API_KEY on server" });
     }
     
