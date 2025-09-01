@@ -1,4 +1,4 @@
-import HigherOrLower from '../Assets/GameLogos/HigherOrLower.png';
+import higherLogo from '../Assets/GameLogos/HigherOrLower.png';
 import GuessThePlayer from '../Assets/GameLogos/GuessThePlayer.png';
 import OnTheClock from '../Assets/GameLogos/OnTheClock.png';
 import StatLine from '../Assets/GameLogos/StatLine.png';
@@ -42,7 +42,7 @@ export const games: Game[] = [
     {
         id: 6,
         name: 'Higher or Lower',
-        image: HigherOrLower
+        image: higherLogo
     },
     {
         id: 7,
