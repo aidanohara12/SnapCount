@@ -177,6 +177,17 @@ function Wavelength() {
         }
     }
 
+    function resetGame() {
+        setIsGameOver(false);
+        setAnswers([]);
+        setSelectedOption(null);
+        setAiResponse([]);
+        setAsked([]);
+        let randomIndex = Math.floor(Math.random() * 100);
+        setCorrect(randomIndex);
+        setValue(50);
+    }
+
     return (
         <div className="wavelength">
             <div>
@@ -215,6 +226,7 @@ function Wavelength() {
                 {isGameOver && <div className="wavelength-game-over">
                     <h3>{guessText}</h3>
                     <h5>The correct number was {correct}</h5>
+                    <button onClick={resetGame}>Play Again</button>
                 </div>}
             </div>
 

@@ -4,6 +4,7 @@ import OnTheClock from '../Assets/GameLogos/OnTheClock.png';
 import StatLine from '../Assets/GameLogos/StatLine.png';
 import Wavelength from '../Assets/GameLogos/Wavelength.png';
 import GuessTheCollege from '../Assets/GameLogos/GuessTheCollege.png';
+import ContactUs from '../Assets/ContactUs.png';
 
 export interface Game {
     id: number
@@ -43,4 +44,9 @@ export const games: Game[] = [
         name: 'Higher or Lower',
         image: HigherOrLower
     },
+    {
+        id: 7,
+        name: 'Contact Us',
+        image: ContactUs
+    }
 ]

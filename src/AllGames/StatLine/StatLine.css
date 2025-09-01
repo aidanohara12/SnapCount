@@ -37,3 +37,31 @@
     width: 50%;
     margin-top: 0px;
 }
+
+.statline-game-over {
+    background-color: white;
+    color: black !important;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.statline-game-over h5{
+    color: black !important;
+}
+
+.statline-game-over h4,
+.statline-game-over h5 {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    margin-left: -10px;
+}
+
+.statline-game-over button {
+    background-color:cornflowerblue;
+    color: black;
+    display: inline;
+    margin: 10px;
+    padding: 10px;
+}

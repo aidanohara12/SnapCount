@@ -6,6 +6,7 @@ import Wavelength from '../../AllGames/Wavelength/Wavelenth'
 import OnTheClock from '../../AllGames/OnTheClock/OnTheClock'
 import GuessThePlayer from '../../AllGames/GuessThePlayer/GuessThePlayer'
 import GuessTheCollege from '../../AllGames/GuessTheCollege/GuessTheCollege'
+import ContactUs from '../../Components/ContactUs/ContactUs'
 
 type gameBoardProps = {
     game: Game
@@ -20,7 +21,6 @@ function GameBoard({ game }: gameBoardProps) {
     }
     else if (game.id === 3) {
         return <GuessTheCollege />
-
     }
     else if (game.id === 4) {
         return <StatLine />
@@ -30,6 +30,8 @@ function GameBoard({ game }: gameBoardProps) {
     }
     else if (game.id === 6) {
         return <HigherOrLower />
+    } else if (game.id === 7) {
+        return <ContactUs />
     }
 }
 
