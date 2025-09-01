@@ -7,8 +7,6 @@ import "./Wavelength.css";
 type option = { value: string; label: string };
 
 function Wavelength() {
-    const API_KEY = import.meta.env.VITE_SNAPCOUNT_API_KEY
-
     useEffect(() => {
         console.log('Wavelength mounted');
         return () => console.log('Wavelength unmounted');
@@ -68,70 +66,31 @@ function Wavelength() {
     const [answers, setAnswers] = useState<string[]>([]);
 
 
-    async function callOpenAIAPI(question: string) {
-        const prompt = `
-        We are playing Wavelength.
-        Hidden number: ${correct} on a scale from 0 (worst) to 100 (best).
 
-        Task:
-        Answer the user's football question with ONE name (player/team/thing) that MATCHES the quality level of the hidden number.
-        Output ONLY the final name, no punctuation, no extra words.
+    const API_BASE = import.meta.env.VITE_API_BASE_URL || "";
 
-        Selection rubric (simulate scanning the league and recent performance):
-        - If the question is about a CURRENT player, weight RECENT seasons most (last 1–2 years): overall impact, efficiency (EPA/PFF tiers), production (yards/TDs/pressures), snap share, availability.
-        - If the question is generic (not "current"), you may include historical players; weight peak impact and accolades (All-Pro, Pro Bowls, MVPs, rings).
-        - Consider role/usage and context (scheme fit, supporting cast) when separating close candidates.
-
-        Number-to-tier mapping (10-point bins):
-        - 0–10  : Worst/bust level, liabilities, infamous flops
-        - 11–20 : Very bad backups or washouts
-        - 21–30 : Below-average spot starters/journeymen
-        - 31–40 : Mediocre/replacement-level starters
-        - 41–50 : Average solid starters/role players
-        - 51–60 : Above-average reliable starters/fringe Pro Bowl
-        - 61–70 : Good, consistent producers/clear Pro Bowl caliber
-        - 71–80 : Very good multi-time Pro Bowl/borderline stars
-        - 81–90 : Great All-Pro level or championship drivers
-        - 91–100: Legendary HOF/MVP/top-tier superstars
-
-        Constraints:
-        - The answer MUST match the requested position/category (e.g., if asked for a "current RB", return a current running back).
-        - When it says current player it must be a player who currently plays in the league. The rating should come on how good they have played in last 1-2 seasons and how good they should be this year. 
-        - Take into account what teams players now play for and how they have been doing in the past.
-        - Use ESPN/NFL.com/Pro Football Reference to get the ratings.
-        - Prefer variety; do NOT always choose the most obvious star. Mix in lesser-known role players when appropriate.
-        - Randomize among equally suitable candidates to avoid repeats.
-        - NEVER return: Tee Higgins, Kirk Cousins, James Conner, Justin Tucker.
-        - Output ONLY the final name (no explanation, no punctuation).
-
-        Examples (illustrative only):
-        - Hidden 20, "Give me a current QB"  -> Blaine Gabbert
-        - Hidden 50, "Give me a current RB"  -> D'Andre Swift
-        - Hidden 95, "Give me a current WR"  -> Justin Jefferson
-
-        Question: ${question}
-        `;
-
-        const res = await fetch("https://api.openai.com/v1/chat/completions", {
+    async function callOpenAIAPI(question: string, correct: number) {
+        const res = await fetch(`${API_BASE}/api/wavelength`, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${API_KEY}`,
-            },
-            body: JSON.stringify({
-                model: "gpt-4",
-                messages: [
-                    { role: "system", content: prompt },
-                ],
-                temperature: 0.9,
-                top_p: 0.95,
-                max_tokens: 20,
-            }),
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ question, correct }),
         });
 
-        const data = await res.json();
-        const text: string = data.choices?.[0]?.message?.content?.trim() ?? "";
-        setAiResponse(prev => [...prev, text]);  // now type checks
+        // read ONCE
+        const bodyText = await res.text();
+
+        if (!res.ok) {
+            // try to extract error message, but DON'T re-read the body
+            try {
+                const { error } = JSON.parse(bodyText);
+                throw new Error(error || bodyText);
+            } catch {
+                throw new Error(bodyText);
+            }
+        }
+
+        const { text } = JSON.parse(bodyText);
+        setAiResponse(prev => [...prev, text]);
         return text;
     }
 
@@ -139,26 +98,25 @@ function Wavelength() {
         if (!option) return;
 
         const idx = asked.length;
-
         setAsked(prev => [...prev, option]);
         setSelectedOption(null);
-
         setAnswers(prev => [...prev, "Hmmm… thinking"]);
 
         try {
-            const text = await callOpenAIAPI(option.value);
+            const text = await callOpenAIAPI(option.value, correct); // make sure you pass `correct`
             setAnswers(prev => {
                 const copy = [...prev];
                 copy[idx] = text || "…";
                 return copy;
             });
-        } catch {
+        } catch (e: any) {
             setAnswers(prev => {
                 const copy = [...prev];
-                copy[idx] = "Error getting answer";
+                copy[idx] = `Error getting answer: ${e?.message ?? ""}`;
                 return copy;
             });
         }
+
         checkGuess();
     }
 
@@ -231,7 +189,7 @@ function Wavelength() {
             </div>
 
             <div className="scale">
-                <Scale value={value} setValue={setValue} totalGuesses={asked.length} setIsGameOver={setIsGameOver} checkGuess={checkGuess}/>
+                <Scale value={value} setValue={setValue} totalGuesses={asked.length} setIsGameOver={setIsGameOver} checkGuess={checkGuess} />
             </div>
 
         </div>
