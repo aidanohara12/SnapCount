@@ -3,32 +3,35 @@ import type { Game } from '../../Models/Games'
 import HigherOrLower from '../../AllGames/HigherOrLower/HigherOrLower'
 import StatLine from '../../AllGames/StatLine/StatLine'
 import Wavelength from '../../AllGames/Wavelength/Wavelenth'
-import Matching from '../../AllGames/Matching/Matching'
+import OnTheClock from '../../AllGames/OnTheClock/OnTheClock'
 import GuessThePlayer from '../../AllGames/GuessThePlayer/GuessThePlayer'
 import GuessTheCollege from '../../AllGames/GuessTheCollege/GuessTheCollege'
+import ContactUs from '../../Components/ContactUs/ContactUs'
 
 type gameBoardProps = {
     game: Game
 }
 
-function GameBoard({game}: gameBoardProps) {
-    if(game.id === 1) {
-        return <HigherOrLower />
-    }
-    else if(game.id === 2) {
+function GameBoard({ game }: gameBoardProps) {
+    if (game.id === 1) {
         return <GuessThePlayer />
     }
-    else if(game.id === 3) {
+    else if (game.id === 2) {
         return <Wavelength />
     }
-    else if(game.id === 4) {
+    else if (game.id === 3) {
         return <GuessTheCollege />
     }
-    else if(game.id === 5) {
+    else if (game.id === 4) {
         return <StatLine />
     }
-    else if(game.id === 6) {
-        return <Matching />
+    else if (game.id === 5) {
+        return <OnTheClock />
+    }
+    else if (game.id === 6) {
+        return <HigherOrLower />
+    } else if (game.id === 7) {
+        return <ContactUs />
     }
 }
 

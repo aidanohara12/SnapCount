@@ -59,7 +59,7 @@ function GuessThePlayer() {
   return (
     <div className='guess-the-player'>
       <h1 className='guess-the-player-title'>Guess the Player</h1>
-      <h5 className='guess-the-player-subtitle'>Try and Guess the Player!</h5>
+      <h5 className='guess-the-player-subtitle'>Try and Guess the Player! You have {7 - guesses.length} guesses left.</h5>
         
       {(isGameOver && wonGame) && <div className='guess-the-player-game-over'>
         <h3>Game Over You Won!</h3>

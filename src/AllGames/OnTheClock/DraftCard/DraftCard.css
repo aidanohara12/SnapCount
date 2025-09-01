@@ -1,0 +1,93 @@
+.draft-card{
+    position: absolute;
+    top: 50px;   /* distance from top of page */
+    left: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 1200px;
+    height: 100%;
+}
+
+.draft-card-background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    justify-content: flex-start; 
+    width: 50%;
+    max-height: 600px; 
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.draft-card-background h3 {
+    color: black;
+    font-size: 20px;
+}
+
+.draft-card-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 0px;  
+}
+
+.draft-card img{
+    width: 15%;
+    height: 15%;
+}
+
+.round, .team, .playerName, .position, .college, .pick {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    width: 90%;
+    margin: 10px 0;     
+}
+
+.round h3, .team h3, .playerName h3, .position h3, .college h3, .pick h3 {
+    font-size: 15px;
+    color: black;
+    margin: 0;
+}
+
+.underline {
+    flex: 1;                    
+    border-bottom: 2px solid black;
+    margin-left: 10px;            
+    display: flex;
+    align-items: center;   
+}
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url('/fonts/IndieFlower.woff2') format('woff2'),
+       url('/fonts/IndieFlower.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.text {
+  color: black;
+  padding: 0 5px;
+  padding-left: 120px;
+  font-family: 'IndieFlower', cursive ;
+}
+
+.text-team {
+  color: black;
+  padding: 0 5px;
+  padding-left: 60px;
+  font-family: 'IndieFlower', cursive ;
+}
+
+.text-name {
+  color: black;
+  padding: 0 5px;
+  padding-left: 120px;
+}

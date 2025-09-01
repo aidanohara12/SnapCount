@@ -42,6 +42,11 @@ function GameOptions({setCurrentGame}: gameOptionsProps) {
                         <GameCard name={games[5].name} image={games[5].image}/>
                     </button>
                 </li>   
+                 <li>
+                    <button onClick={() => setCurrentGame(games[6])}>
+                        <GameCard name={games[6].name} image={games[6].image}/>
+                    </button>
+                </li> 
             </ul>
         </div>
     )

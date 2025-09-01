@@ -130,19 +130,19 @@ function StatLine() {
             </div>
 
             <div className='statline-guesses'>
-                {!isGameOver && <div className='statline-game-over'>
+                {!isGameOver && <div className='statline-guesses'>
                     <h4>You have {3 - guesses} guesses left</h4>
                 </div>}
 
                 {isGameOver && <div className='statline-game-over'>
                     {wonGame && <div className='statline-game-over'>
                         <h3>Game Over! You Win!</h3>
-                        <h5>The correct player was {player.firstName} {player.lastName}</h5>
+                        <h5 style={{color: "black", textAlign:"center"}}>The correct player was {player.firstName} {player.lastName}</h5>
                         <button onClick={resetGame}>Play Again</button>
                     </div>}
                     {!wonGame && <div className='statline-game-over'>
                         <h3>Game Over - You Lose :(</h3>
-                        <h4>The correct player was {player.firstName} {player.lastName}</h4>
+                        <h4 style={{color: "black", textAlign:"center"}}>The correct player was {player.firstName} {player.lastName}</h4>
                         <button onClick={resetGame}>Play Again</button>
                     </div>}
                 </div>}

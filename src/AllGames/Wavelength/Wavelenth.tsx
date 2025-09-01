@@ -177,12 +177,23 @@ function Wavelength() {
         }
     }
 
+    function resetGame() {
+        setIsGameOver(false);
+        setAnswers([]);
+        setSelectedOption(null);
+        setAiResponse([]);
+        setAsked([]);
+        let randomIndex = Math.floor(Math.random() * 100);
+        setCorrect(randomIndex);
+        setValue(50);
+    }
+
     return (
         <div className="wavelength">
             <div>
                 <h1 style={{ color: "white" }}>Wavelength</h1>
                 <h3 style={{ color: "white", width: "600px", marginTop: "-20px" }}>
-                    Ask a question and the AI will respond based on the hidden number!
+                    Ask 3 questions and the AI will respond based on the hidden number!
                 </h3>
 
                 <div style={{ maxWidth: 520 }}>
@@ -215,6 +226,7 @@ function Wavelength() {
                 {isGameOver && <div className="wavelength-game-over">
                     <h3>{guessText}</h3>
                     <h5>The correct number was {correct}</h5>
+                    <button onClick={resetGame}>Play Again</button>
                 </div>}
             </div>
 

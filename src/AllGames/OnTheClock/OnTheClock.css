@@ -1,0 +1,48 @@
+.on-the-clock h2, h4 {
+    color: white;
+    width: 400px;
+    padding-left: 20px;
+}
+
+.on-the-clock-search {
+    width: 35%;
+    margin-left: 20px;
+    color: black;
+}
+
+.on-the-clock-search h3,h4, h5 {
+    color: white;
+    margin-top: 10px;
+}
+
+.on-the-clock-search h4 {
+    font-size: small;
+}
+
+.on-the-clock-game-over {
+    background-color: white;
+    color: black !important;
+    border-radius: 10px;
+    width: 450px;
+    margin-top: 40px;
+}
+
+.on-the-clock-game-over h3, h5 {
+    padding: 10px;
+    color: black;
+    margin-top: -10px;
+    margin-bottom: 0px;
+}
+
+.on-the-clock-game-over h3 {
+    font-size: 25px;
+}
+
+.on-the-clock-game-over button {
+    background-color:cornflowerblue;
+    color: black;
+    display: inline;
+    margin: 10px;
+    padding: 10px;
+}
+

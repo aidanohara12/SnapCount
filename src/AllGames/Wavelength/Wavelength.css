@@ -16,6 +16,10 @@
     justify-content: center;
 }
 
+.wavelength-answers {
+    font-size: 12px;
+}
+
 .wavelength-game-over {
     background-color: white;
     color: black;
@@ -24,5 +28,14 @@
 }
 
 .wavelength-game-over h3, h5 {
+    padding: 5px;
+}
+
+.wavelength-game-over button {
+    background-color:cornflowerblue;
+    color: black;
+    display: inline;
+    margin: 10px;
     padding: 10px;
 }
+

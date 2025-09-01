@@ -8,6 +8,7 @@ function HigherOrLower() {
     const [score, setScore] = useState(0)
     const randomNumber = Math.floor(Math.random() * players.length)
     const [currentPlayer, setCurrentPlayer] = useState(players[randomNumber])
+    const [copied, setCopied] = useState(false)
     let textToCopy = useRef('');
 
 
@@ -40,11 +41,14 @@ function HigherOrLower() {
     function playAgain() {
         setFailed(false)
         setScore(0)
+        setCopied(false)
         setCurrentPlayer(players[Math.floor(Math.random() * players.length)])
     }
 
     function copyText() {
         navigator.clipboard.writeText(textToCopy.current)
+        setCopied(true)
+        setTimeout(() => setCopied(false), 2000);
     }
 
     return (
@@ -73,7 +77,7 @@ function HigherOrLower() {
                     <h3>The next player was {currentPlayer.firstName} {currentPlayer.lastName} with the number {currentPlayer.jerseyNumber}</h3>
                     <div>
                         <button onClick={() => playAgain()}>Click Here to Play Again!</button>
-                        <button onClick={() => copyText()}>Click Here to Copy Score!</button>
+                        <button onClick={() => copyText()}>{copied ? "Copied!" : "Click Here to Copy Score!"}</button>
                     </div>
                 </div>
             )}
