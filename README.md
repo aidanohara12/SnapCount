@@ -3,6 +3,8 @@
 
 Welcome to **Snap Count**, the ultimate home for endless NFL trivia! Play fan-favorite games like **Statline**, **Wavelength**, and **Guess the College** — each designed to challenge your football knowledge in new and exciting ways. With a variety of game modes and constantly fresh trivia, Snap Count guarantees endless fun for every NFL fan.  
 
+Play here at [snapcountnfl.com](www.snapcountnfl.com)
+
 ---
 
 ## All Games
