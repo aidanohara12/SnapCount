@@ -1,0 +1,22 @@
+{
+  "name": "SnapCount",
+  "short_name": "SnapCount",
+  "description": "Free NFL trivia site with games like StatLine, On The Clock, Higher or Lower, and Wavelength.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1f2937",
+  "theme_color": "#1f2937",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/SnapCountLogo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/SnapCountLogo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
