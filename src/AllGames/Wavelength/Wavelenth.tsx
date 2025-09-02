@@ -153,7 +153,7 @@ function Wavelength() {
                     Ask 3 questions and the AI will respond based on the hidden number!
                 </h3>
 
-                <div style={{ maxWidth: 520 }}>
+                <div style={{ maxWidth: 520, color: "black !important"}}>
                     <Select
                         options={options}
                         value={selectedOption}
