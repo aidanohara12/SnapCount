@@ -5,6 +5,7 @@ import path from 'node:path'
 export default defineConfig({
   plugins: [react()],
   base: "/",
+  build: { outDir: 'dist' },
   server: {
     proxy: {
       "/api": {
