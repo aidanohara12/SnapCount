@@ -106,7 +106,7 @@ function OnTheClock() {
         )}
       </div>
 
-      <div>
+      <div className='on-the-clock-draft-card'>
         <DraftCard player={onTheClockPlayer} isGameOver={isGameOver} guesses={guesses} />
       </div>
     </div>

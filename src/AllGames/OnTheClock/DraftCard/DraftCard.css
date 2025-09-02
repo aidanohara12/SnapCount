@@ -1,7 +1,4 @@
 .draft-card{
-    position: absolute;
-    top: 50px;   /* distance from top of page */
-    left: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
