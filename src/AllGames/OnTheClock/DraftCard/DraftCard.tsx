@@ -1,6 +1,6 @@
 import './DraftCard.css'
 import type { OnTheClockPlayer } from '../../../Models/OnTheClockPlayer'
-import DraftLogo from '../../../Assets/DraftLogo.png'
+import DraftLogo from '../../../assets/DraftLogo.png'
 
 type DraftCardProps = {
     player: OnTheClockPlayer
