@@ -75,36 +75,39 @@ function OnTheClock() {
 
   return (
     <div className='on-the-clock'>
-      <h2>On The Clock</h2>
-      <h4>Try and guess the player based on their draft card! You have {3 - guesses} guesses left.</h4>
+      <div>
+        <h2>On The Clock</h2>
+        <h4>Try and guess the player based on their draft card! You have {3 - guesses} guesses left.</h4>
 
-      <div className='on-the-clock-search'>
-        <Select
-          options={options}
-          value={selectedOption}
-          placeholder="Search a player..."
-          isClearable
-          onChange={checkGuess}
-          isDisabled={guesses >= 3}
-        />
+        <div className='on-the-clock-search'>
+          <Select
+            options={options}
+            value={selectedOption}
+            placeholder="Search a player..."
+            isClearable
+            onChange={checkGuess}
+            isDisabled={guesses >= 3}
+          />
 
-        <h3>Guessed Players</h3>
-        {guessedPlayers.map((p, idx) => (
-          <h4 key={`${p.firstName}-${p.lastName}-${idx}`}>
-            {p.firstName} {p.lastName}
-          </h4>
-        ))}
+          <h3>Guessed Players</h3>
+          {guessedPlayers.map((p, idx) => (
+            <h4 key={`${p.firstName}-${p.lastName}-${idx}`}>
+              {p.firstName} {p.lastName}
+            </h4>
+          ))}
 
-        {isGameOver && (
-          <div className='on-the-clock-game-over'>
-            <h2 style={{color: "black", margin:"0px", textAlign:"center"}}>{correctGuess ? "Correct!"! : "Game Over!" }</h2>
-            <h5>
-              {correctGuess ? 'You Got It!' : 'The correct player was ' + onTheClockPlayer.firstName  + ' ' + onTheClockPlayer.lastName}
-            </h5>
-            <button onClick={resetGame}>Play Again</button>
-          </div>
-        )}
+          {isGameOver && (
+            <div className='on-the-clock-game-over'>
+              <h2 style={{ color: "black", margin: "0px", textAlign: "center" }}>{correctGuess ? "Correct!"! : "Game Over!"}</h2>
+              <h5>
+                {correctGuess ? 'You Got It!' : 'The correct player was ' + onTheClockPlayer.firstName + ' ' + onTheClockPlayer.lastName}
+              </h5>
+              <button onClick={resetGame}>Play Again</button>
+            </div>
+          )}
+        </div>
       </div>
+
 
       <div className='on-the-clock-draft-card'>
         <DraftCard player={onTheClockPlayer} isGameOver={isGameOver} guesses={guesses} />
