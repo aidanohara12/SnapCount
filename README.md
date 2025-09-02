@@ -1,69 +1,34 @@
-# React + TypeScript + Vite
+# 🏈 Snap Count — NFL Trivia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+Welcome to **Snap Count**, the ultimate home for endless NFL trivia! Play fan-favorite games like **Statline**, **Wavelength**, and **Guess the College** — each designed to challenge your football knowledge in new and exciting ways. With a variety of game modes and constantly fresh trivia, Snap Count guarantees endless fun for every NFL fan.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Play here at [snapcountnfl.com](www.snapcountnfl.com)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## All Games
+- **Statline** – Guess the player from their season stat line  
+- **Wavelength** – Place your answer on the scale based on hidden difficulty  
+- **Guess the College** – Match NFL players with their alma mater  
+- **Guess the Player** - Identify players by clues and attributes
+- **On the Clock** - Try to figure out the hidden player based on draft day card
+- **Higher or Lower** - After given a jersey number try to predict whether the next jersey number will be higher or lower
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Features
+- Interactive UI built for fun and fast gameplay  
+- Multiple trivia game modes in one site  
+- Responsive design for desktop and mobile  
+- Endless replayability for NFL fans  
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Tech Stack
+- **Frontend:** React + TypeScript
+- **Backend** Cloudfair
+- **APIs Used** OpenAI API used for Wavelength
+- **Styling:** CSS / SCSS (responsive grid layouts)  
+- **Build Tool:** Vite  
+- **Hosting:** GitHub Pages

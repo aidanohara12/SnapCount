@@ -97,8 +97,7 @@ function OnTheClock() {
 
         {isGameOver && (
           <div className='on-the-clock-game-over'>
-            <h2 style={{color: "black", margin:"0px", textAlign:"center"}}>Game Over!</h2>
-            <h3>{correctGuess ? 'Correct!' : 'Incorrect!'}</h3>
+            <h2 style={{color: "black", margin:"0px", textAlign:"center"}}>{correctGuess ? "Correct!"! : "Game Over!" }</h2>
             <h5>
               {correctGuess ? 'You Got It!' : 'The correct player was ' + onTheClockPlayer.firstName  + ' ' + onTheClockPlayer.lastName}
             </h5>
@@ -107,7 +106,7 @@ function OnTheClock() {
         )}
       </div>
 
-      <div>
+      <div className='on-the-clock-draft-card'>
         <DraftCard player={onTheClockPlayer} isGameOver={isGameOver} guesses={guesses} />
       </div>
     </div>
