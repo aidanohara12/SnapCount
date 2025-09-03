@@ -3,14 +3,14 @@ type Team = {
   year: string;
 };
 
-type WheredHePlay = {
+export type WhereHePlayer = {
   firstName: string;
   lastName: string;
   teams: Team[];
   position: string;
 };
 
-const players: WheredHePlay[] = [
+export const players: WhereHePlayer[] = [
   // QBs
   {
     firstName: "Aaron",
@@ -708,18 +708,6 @@ const players: WheredHePlay[] = [
     position: "EDGE"
   },
   {
-    firstName: "Darrelle",
-    lastName: "Revis",
-    teams: [
-      { name: "Jets", year: "2007-2012" },
-      { name: "Buccaneers", year: "2013" },
-      { name: "Patriots", year: "2014" },
-      { name: "Jets", year: "2015-2016" },
-      { name: "Chiefs", year: "2017" }
-    ],
-    position: "CB"
-  },
-  {
     firstName: "Richard",
     lastName: "Sherman",
     teams: [
@@ -1230,16 +1218,6 @@ const players: WheredHePlay[] = [
     position: "DE"
   },
   {
-    firstName: "Reggie",
-    lastName: "White",
-    teams: [
-      { name: "Eagles", year: "1985-1992" },
-      { name: "Packers", year: "1993-1998" },
-      { name: "Panthers", year: "2000" }
-    ],
-    position: "DE"
-  },
-  {
     firstName: "DeMarcus",
     lastName: "Ware",
     teams: [
@@ -1503,15 +1481,6 @@ const players: WheredHePlay[] = [
     ],
     position: "RB"
   },
-  {
-    firstName: "LaDainian",
-    lastName: "Tomlinson",
-    teams: [
-      { name: "Chargers", year: "2001-2009" },
-      { name: "Jets", year: "2010-2011" }
-    ],
-    position: "RB"
-  },
 
   // WR legends
   {
@@ -1704,15 +1673,6 @@ const players: WheredHePlay[] = [
       { name: "Broncos", year: "2009-2011" }
     ],
     position: "S"
-  },
-  {
-    firstName: "Champ",
-    lastName: "Bailey",
-    teams: [
-      { name: "Commanders", year: "1999-2003" },
-      { name: "Broncos", year: "2004-2013" }
-    ],
-    position: "CB"
   },
   {
     firstName: "Darrelle",
@@ -2020,21 +1980,6 @@ const players: WheredHePlay[] = [
     firstName: "Brian",
     lastName: "Cushing",
     teams: [{ name: "Texans", year: "2009-2017" }],
-    position: "LB"
-  },
-  {
-    firstName: "Patrick",
-    lastName: "Willis",
-    teams: [{ name: "49ers", year: "2007-2014" }],
-    position: "LB"
-  },
-  {
-    firstName: "NaVorro",
-    lastName: "Bowman",
-    teams: [
-      { name: "49ers", year: "2010-2017" },
-      { name: "Raiders", year: "2017" }
-    ],
     position: "LB"
   },
   {

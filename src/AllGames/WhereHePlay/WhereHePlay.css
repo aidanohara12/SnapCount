@@ -1,0 +1,20 @@
+.where-he-play {
+    margin-top: 0px;
+    margin-left: 20px;
+    overflow: scroll;
+    height: 70vh;
+    color: white;
+}
+
+.where-he-play h2, h4 {
+    color: white;
+    width: 400px;
+    padding-left: 20px;
+}
+
+.where-he-play-search {
+    width: 70%;
+    margin-left: 20px;
+    color: black;
+}
+
