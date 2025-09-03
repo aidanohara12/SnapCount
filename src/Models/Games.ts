@@ -5,6 +5,7 @@ import StatLine         from '@/assets/GameLogos/StatLine.png'
 import Wavelength       from '@/assets/GameLogos/Wavelength.png'
 import GuessTheCollege  from '@/assets/GameLogos/GuessTheCollege.png'
 import ContactUs        from '@/assets/ContactUs.png'
+import WheredHePlay     from '@/assets/GameLogos/WhereHePlay.png'
 
 export interface Game {
     id: number
@@ -45,7 +46,12 @@ export const games: Game[] = [
         image: higherLogo
     },
     {
-        id: 7,
+        id: 7, 
+        name: 'Where\'d He Play',
+        image: WheredHePlay
+    },
+    {
+        id: 8,
         name: 'Contact Us',
         image: ContactUs
     }
