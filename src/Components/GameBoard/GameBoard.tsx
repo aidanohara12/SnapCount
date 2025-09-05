@@ -8,6 +8,7 @@ import GuessThePlayer from '../../AllGames/GuessThePlayer/GuessThePlayer'
 import GuessTheCollege from '../../AllGames/GuessTheCollege/GuessTheCollege'
 import ContactUs from '../../Components/ContactUs/ContactUs'
 import WhereHePlay from '../../AllGames/WhereHePlay/WhereHePlay'
+import CareerMode from '../../AllGames/CareerMode/CareerMode'
 
 type gameBoardProps = {
     game: Game
@@ -34,6 +35,8 @@ function GameBoard({ game }: gameBoardProps) {
     }  else if (game.id === 7) {
         return <WhereHePlay />
     } else if (game.id === 8) {
+        return <CareerMode />
+    } else if (game.id === 9) {
         return <ContactUs />
     }
 }

@@ -6,6 +6,7 @@ import Wavelength       from '@/assets/GameLogos/Wavelength.png'
 import GuessTheCollege  from '@/assets/GameLogos/GuessTheCollege.png'
 import ContactUs        from '@/assets/ContactUs.png'
 import WheredHePlay     from '@/assets/GameLogos/WhereHePlay.png'
+import CareerMode       from '@/assets/GameLogos/CareerMode.png'
 
 export interface Game {
     id: number
@@ -52,6 +53,11 @@ export const games: Game[] = [
     },
     {
         id: 8,
+        name: 'Career Mode',
+        image: CareerMode
+    },
+    {
+        id: 9,
         name: 'Contact Us',
         image: ContactUs
     }
