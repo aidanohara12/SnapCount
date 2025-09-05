@@ -1,13 +1,14 @@
 import './MainPage.css'
 import Header from '../Components/Header/Header'
 import GameOptions from '../Components/GameOptions/GameOptions'
-import { useState } from 'react'
+import { use, useEffect, useState } from 'react'
 import type { Game } from '../Models/Games'
 import { games } from '../Models/Games'
 import GameBoard from '../Components/GameBoard/GameBoard'
 
 function MainPage() {
     const [currentGame, setCurrentGame] = useState<Game>(games[0])
+
     return (
         <div className="parent">
             <div className="header">
