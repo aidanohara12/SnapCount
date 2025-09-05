@@ -7,6 +7,7 @@ import OnTheClock from '../../AllGames/OnTheClock/OnTheClock'
 import GuessThePlayer from '../../AllGames/GuessThePlayer/GuessThePlayer'
 import GuessTheCollege from '../../AllGames/GuessTheCollege/GuessTheCollege'
 import ContactUs from '../../Components/ContactUs/ContactUs'
+import WhereHePlay from '../../AllGames/WhereHePlay/WhereHePlay'
 
 type gameBoardProps = {
     game: Game
@@ -30,7 +31,9 @@ function GameBoard({ game }: gameBoardProps) {
     }
     else if (game.id === 6) {
         return <HigherOrLower />
-    } else if (game.id === 7) {
+    }  else if (game.id === 7) {
+        return <WhereHePlay />
+    } else if (game.id === 8) {
         return <ContactUs />
     }
 }

@@ -1,0 +1,280 @@
+.where-he-play {
+  --bg: #0f1115;
+  --panel: #151923;
+  --panel-border: #202635;
+  --text: #f6f7fb;
+  --muted: #a9b1c7;
+  --accent: #6aa1ff;
+  --success: #3ddc97;
+  --danger: #ff6b6b;
+  --shadow: 0 8px 24px rgba(0,0,0,0.25);
+
+  margin: 0 20px;
+  color: var(--text);
+  width: 100%;
+  max-width: 1100px;
+  height: 77vh;
+  overflow: hidden;
+}
+
+.where-he-play h2,
+.where-he-play h4 {
+  color: var(--text);
+  margin: 0;
+  padding-left: 20px;
+}
+
+.where-he-play h2 {
+  font-size: 2rem;
+  letter-spacing: 0.2px;
+  padding-top: 6px;
+}
+
+.where-he-play h4 {
+  color: var(--muted);
+  font-weight: 500;
+  margin-top: 6px;
+  padding-bottom: 6px;
+}
+
+.where-he-play-search {
+  margin: 16px 20px 0 20px;
+  width: clamp(260px, 80%, 720px);
+  color: black;
+}
+
+.where-he-play-path {
+  margin-top: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+}
+
+.where-he-play-path h3 {
+  margin: 0 0 6px 0;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.where-he-play-path > *:not(h3) {
+  width: 100%;
+}
+
+/* Sub-panels */
+.guessed-players,
+.where-he-play-path,
+.where-he-play-game-over {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+/* Guessed players list */
+.guessed-players {
+  margin: 16px 20px;
+  padding: 12px 16px;
+  width: clamp(260px, 80%, 720px);
+}
+
+.guessed-players h2 {
+  padding: 0;
+  margin: 0 0 8px 0;
+  font-size: 1.25rem;
+}
+
+.guessed-players ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.guessed-players li {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--panel-border);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.95rem;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+/* Game over panel */
+.where-he-play-game-over {
+  margin: 16px 20px;
+  padding: 14px 16px;
+  width: clamp(260px, 80%, 720px);
+  text-align: center;
+}
+
+.where-he-play-game-over h3 {
+  margin: 0 0 6px 0;
+}
+
+.where-he-play-game-over h3:contains("Won"),
+.where-he-play-game-over h3:has(+ button) {
+  /* Fallback: we’ll color via classes below */
+}
+
+.where-he-play-game-over h4 {
+  margin: 6px 0 12px 0;
+  padding-left: 0;
+  color: var(--muted);
+}
+
+/* Button */
+.where-he-play button {
+  background: var(--accent);
+  color: #0b0f16;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.08s ease, filter 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 6px 16px rgba(106, 161, 255, 0.25);
+}
+
+.where-he-play button:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.where-he-play button:active {
+  transform: translateY(0);
+}
+
+/* Utility coloring for win/lose copy */
+.where-he-play-game-over h3 {
+  color: var(--text);
+}
+
+.where-he-play-game-over h3:before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.9;
+}
+
+.where-he-play-game-over.won h3 { color: var(--success); }
+.where-he-play-game-over.lost h3 { color: var(--danger); }
+
+.where-he-play {
+  scrollbar-width: thin;
+}
+
+.where-he-play::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+.where-he-play::-webkit-scrollbar-thumb {
+  background: #30384b;
+  border-radius: 8px;
+}
+.where-he-play::-webkit-scrollbar-track {
+  background: #141824;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .where-he-play {
+    height: calc(100vh - 120px);
+    margin: 0 12px;
+  }
+
+  .where-he-play h2 {
+    font-size: 1.6rem;
+    padding-left: 12px;
+  }
+
+  .where-he-play h4 {
+    padding-left: 12px;
+    font-size: 0.95rem;
+  }
+
+  .where-he-play-search,
+  .guessed-players,
+  .where-he-play-game-over {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .guessed-players ul {
+    gap: 6px;
+  }
+
+  .guessed-players li {
+    font-size: 0.9rem;
+    padding: 5px 9px;
+  }
+}
+
+.where-he-play-path {
+  padding: 12px 16px 18px;
+}
+.where-he-play-path h3 + * {
+  margin-top: 8px;
+}
+
+/* Center all text + boxes */
+.where-he-play h2,
+.where-he-play h4,
+.guessed-players,
+.where-he-play-game-over {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Guessed players list centered */
+.guessed-players ul {
+  justify-content: center;
+}
+
+/* Remove the Game Over dot */
+.where-he-play-game-over h3:before {
+  content: none !important;
+}
+
+/* react-select text black */
+.where-he-play-search .Select__control,
+.where-he-play-search .Select__single-value,
+.where-he-play-search .Select__input-container {
+  color: black !important;
+}
+
+/* Keep team names on one line and avoid odd hyphenation */
+.path .team-name {
+  white-space: nowrap;
+  letter-spacing: .2px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Ensure connector labels don’t sit on top of nodes/arrows */
+.path .connector-label {
+  white-space: nowrap;
+  pointer-events: none;
+  position: relative;
+  top: 0;           /* adjust if you nudged these earlier */
+}
+
+/* If your track shows a scrollbar bar, hide it cleanly */
+.path-track {
+  overflow-x: auto;
+  scrollbar-width: none;          /* Firefox */
+}
+.path-track::-webkit-scrollbar {  /* WebKit */
+  display: none;
+}

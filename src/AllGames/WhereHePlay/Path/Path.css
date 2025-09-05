@@ -1,0 +1,151 @@
+
+
+
+
+/* Container */
+.path {
+  --pill-bg: #ffffff;
+  --pill-border: #e5e7eb;  /* light gray */
+  --pill-shadow: rgba(0, 0, 0, 0.06);
+  --text: #111827;         /* near-black */
+  --muted: #6b7280;        /* gray-500 */
+  --badge-bg: #111827;     /* dark badge */
+  --badge-text: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 8px 12px;
+}
+
+.path-track {
+  display: grid;
+  grid-auto-flow: column;
+  width: 100%;
+  grid-auto-columns: 300px;
+  align-items: center;
+  justify-content: center;
+  gap: 28px; 
+
+  list-style: none;
+  padding: 8px 6px;
+  margin: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+}
+
+/* Optional nicer scrollbar for WebKit */
+.path-track::-webkit-scrollbar {
+  height: 8px;
+}
+.path-track::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 9999px;
+}
+
+/* Node */
+.path-node {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Connector line (between nodes) */
+.path-node:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -14px;  /* half of gap */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;   /* matches gap */
+  height: 2px;
+  background: linear-gradient(90deg, #cbd5e1, #94a3b8);
+  border-radius: 2px;
+}
+
+/* Optional arrow head */
+.path-node:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  right: -14px;
+  top: 50%;
+  transform: translate(12px, -50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #94a3b8;
+  border-top: 2px solid #94a3b8;
+  background: transparent;
+}
+/* Pill content */
+.node-pill {
+  display: grid;
+  grid-template-columns: 40px auto;
+  align-items: center;
+  gap: 12px;
+
+  background: var(--pill-bg);
+  color: var(--text);
+  border: 1px solid var(--pill-border);
+  box-shadow: 0 2px 10px var(--pill-shadow);
+  border-radius: 9999px;
+  padding: 10px 14px;
+  width: 100%;
+  min-width: unset;  /* consistent size for readability */
+}
+
+/* Badge (team initials) */
+.node-badge {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 9999px;
+  letter-spacing: 0.5px;
+}
+
+/* Text */
+.node-text {
+  display: grid;
+  gap: 2px;
+}
+.node-team {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.1;
+  margin-left: -20px !important;
+  text-align: left !important
+}
+.node-years {
+  font-size: 0.85rem;
+  text-align: left !important;
+  color: var(--muted);
+}
+
+/* Compact on very small screens */
+@media (max-width: 420px) {
+  .node-pill {
+    grid-template-columns: 32px auto;
+    min-width: 200px;
+    padding: 8px 12px;
+  }
+  .node-badge {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+  .node-team { font-size: 0.95rem; }
+  .node-years { font-size: 0.8rem; }
+}
+
+  .path {
+    --pill-bg: #0f172a;       /* slate-900-ish */
+    --pill-border: #1f2937;   /* slate-800 */
+    --pill-shadow: rgba(0,0,0,0.3);
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --badge-bg: #2563eb;      /* blue-600 pop */
+    --badge-text: #e5e7eb;
+  }

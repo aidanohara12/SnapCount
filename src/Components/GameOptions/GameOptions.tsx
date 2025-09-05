@@ -41,10 +41,15 @@ function GameOptions({setCurrentGame}: gameOptionsProps) {
                     <button onClick={() => setCurrentGame(games[5])}>
                         <GameCard name={games[5].name} image={games[5].image}/>
                     </button>
-                </li>   
-                 <li>
+                </li>  
+                <li>
                     <button onClick={() => setCurrentGame(games[6])}>
                         <GameCard name={games[6].name} image={games[6].image}/>
+                    </button>
+                </li>  
+                 <li>
+                    <button onClick={() => setCurrentGame(games[7])}>
+                        <GameCard name={games[7].name} image={games[7].image}/>
                     </button>
                 </li> 
             </ul>

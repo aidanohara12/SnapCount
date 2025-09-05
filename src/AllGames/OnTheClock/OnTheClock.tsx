@@ -15,7 +15,7 @@ function OnTheClock() {
   const [isGameOver, setIsGameOver] = useState(false);
   const [correctGuess, setCorrectGuess] = useState(false);
   const [guesses, setGuesses] = useState(0);
-  const [guessedPlayers, setGuessedPlayers] = useState<OnTheClockPlayer[]>([]); // <-- STATE
+  const [guessedPlayers, setGuessedPlayers] = useState<OnTheClockPlayer[]>([]); 
 
   function shuffle<T>(array: T[]): T[] {
     const copy = [...array];
