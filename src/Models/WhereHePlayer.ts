@@ -455,7 +455,8 @@ export const players: WhereHePlayer[] = [
     teams: [
       { name: "Vikings", year: "2015-2019" },
       { name: "Bills", year: "2020-2023" },
-      { name: "Texans", year: "2024-" }
+      { name: "Texans", year: "2024" },
+      { name: "Patriots", year: "2025" }
     ],
     position: "WR"
   },
