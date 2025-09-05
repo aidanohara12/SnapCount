@@ -14,7 +14,8 @@
   width: 100%;
   max-width: 1100px;
   height: 77vh;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .where-he-play h2,
