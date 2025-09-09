@@ -1,4 +1,5 @@
 import './CareerMode.css'
+import CustomizePlayer from './CustomizePlayer/CustomizePlayer'
 
 function CareerMode() {
     return (
